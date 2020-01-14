@@ -1,0 +1,49 @@
+.coin-lock-wrap{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+}
+.coin-lock-content{
+  width: 600rpx;
+	height: 550rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -300rpx;
+  margin-left: -300rpx;
+  padding: 60rpx 0 50rpx;
+  box-sizing: border-box;
+}
+.coin_lock_content_title{
+  font-size: 36rpx;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.remaining_coin{
+  color: #999;
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.remaining_coin>text:nth-child(2){
+  color:  #2d9fff
+}
+.recharge,.cancel{
+  width: 501rpx;
+  border-radius: 10rpx;
+	border: solid 1rpx #dcdcdc;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  margin: 0  auto;
+}
+.cancel{
+  color: #999;
+  margin-top: 40rpx;
+}

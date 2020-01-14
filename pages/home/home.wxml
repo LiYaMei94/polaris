@@ -1,0 +1,70 @@
+<!-- 引入轮播图模板 -->
+<import src='../template/swiperTemplate/swiperTemplate.wxml' />
+<view class='home {{signInSuccessfully?"homeFixed":""}}'>
+  <!-- 首页头部信息 -->
+  <view class='homeContentTop'>
+    <view class='fansInfoBox' wx:if="{{userInfo!==null}}">
+      <view class='fansInfo'>
+        <view class='fansinfoline'>
+          <navigator hover-class='none' url='../mine_home/mine_home?uid={{userInfo.openid}}' class='polarisName' style='font-size: 32rpx;font-weight: 900;'>{{userInfo.nickname}}</navigator>
+          <view class='levelConainer' wx:if='{{userInfo.vip!=0}}'>
+            <!-- <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/levelImg.png'></image> -->
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/vip%5Cvip{{userInfo.vip}}.png'></image>
+            <!-- <view class='levelInfo'>
+              <text class='VIP'>VIP</text>
+              <text class='levelNum'>{{userInfo.vip}}</text>
+            </view> -->
+          </view>
+        </view>
+        <view class='fansinfoline'>积分：{{userInfo.credit}}</view>
+      </view>
+      <view class='signInBtn greenButton {{userInfo.is_sign?"finshedTypeBtn":""}}' bindtap='signIn'>{{userInfo.is_sign?'已签到':'签到'}}</view>
+    </view>
+    <!-- 轮播图 -->
+    <view class='banner'>
+      <template is='swiperTemplate' data='{{swiperInfo}}' />
+    </view>
+    <view class='homeTab'>
+      <navigator url='../trip/trip' hover-class='none' class='tabitem'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5ChomeTab1.png'></image>
+        <view>行程</view>
+      </navigator>
+      <navigator url='../makeReinforce/makeReinforce' hover-class='none' class='tabitem'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5ChomeTab2.png'></image>
+        <view>应援</view>
+      </navigator>
+      <navigator url='../ranking/ranking' hover-class='none' class='tabitem'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5ChomeTab3.png'></image>
+        <view>排行</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 个人动态列表 -->
+  <view class='personalDynamic'>
+    <view class='polaris-item-wrapTitle'>
+      <text>个人动态</text>
+      <text catchtap='AddFans'>加入粉丝群</text>
+    </view>
+    <view class='personalDynamicList'>
+      <!-- 引入组件 -->
+      <block wx:for='{{polarisItemInfo}}' wx:for-item='polarisItem' wx:key='index'>
+        <polaris-item-wrap polarisItem='{{polarisItem}}' bind:updatelist='updatelist' source="home" bind:openOp="openOp"></polaris-item-wrap>
+      </block>
+      <import src="../template/load-more/load-more.wxml" />
+      <template is="loading" data="{{loadComplete,count:polarisItemInfo.length, text:'只有这些啦~',emptyText:'小姐姐资讯失联中…等你来call'}}" />
+    </view>
+  </view>
+</view>
+<!-- 签到成功弹框 -->
+<view class='signInSuccessfully' catchtap='hiddensignInDialog' wx:if='{{signInSuccessfully}}'>
+  <view class='signInDialog'>
+    <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CQD_tanceng.png' class='bgImg'>
+    </image>
+    <view class='dialogText'>获得 {{signCredit}} 积分</view>
+  </view>
+  <image class='closesignInDialog' bindtap='hiddensignInDialog' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CclosesignInDialog.png'></image>
+</view>
+<dialog-op polarisItem="{{currentOpItem}}" wx:if="{{showOp}}" source="home" bind:openOp="openOp" />
+<image class='toTop' wx:if="{{showToTop}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/to_top.png' bindtap='toTop'></image>
+<!-- 加入粉丝群弹窗-->
+<addFansTemplate addFansShow='{{addFansShow}}'></addFansTemplate>

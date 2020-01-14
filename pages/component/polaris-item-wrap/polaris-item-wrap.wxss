@@ -1,0 +1,254 @@
+.polaris-item-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  margin-bottom: 20rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+  position: relative;
+}
+.moreBox{
+  width: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  vertical-align: middle;
+  float: right;
+}
+.moreBox text{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 9rpx;
+  float: right;
+  margin-top: 34.5rpx;
+}
+/* 顶部 */
+
+.polaris-item-wrap-top {
+  width: 100%;
+  display: flex;
+}
+
+.item-left {
+  width: 103rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  height: 100rpx;
+  background-color: #eee;
+}
+
+.item-left image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.item-right {
+  flex: 1;
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-right-line1, .item-right-line2 {
+  display: flex;
+  align-items: center;
+}
+
+.item-right-line2 {
+  margin-top: 23rpx;
+}
+
+.nameinfo {
+  font-size: 28rpx;
+  color: #333;
+  max-width: 80%;
+  line-height: 1.6;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.essence {
+  color: white;
+  font-size: 20rpx;
+  background-color: #ff2f2f;
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  border-radius: 6rpx;
+}
+
+.more {
+  width: 28rpx;
+  height: 8rpx;
+  padding: 30rpx;
+  position: absolute;
+  right: 0;
+}
+
+.subtitle {
+  flex: 1;
+}
+
+/* 文字内容 */
+
+.polaris-item-wrap-text {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.polaris-item-wrap-text>rich-text{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fullTextImg{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+/* 图片 */
+
+.polaris-item-wrap-image {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20rpx;
+  /* padding-bottom: 50rpx; */
+}
+
+/* 图片*/
+
+.polaris-item-wrap-image image {
+  width: 31.2%;
+  height: 220rpx;
+  float: left;
+  margin-bottom: 10rpx;
+}
+
+/* 视频 */
+
+.polaris-item-wrap-video {
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: black; 
+  text-align: center;
+  position: relative;
+   height: 350rpx;
+}
+.videoImgBox{
+  width: 100%;
+  height: 100%;
+}
+.playBtn{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -40rpx;
+  left: 50%;
+  margin-left: -40rpx;
+}
+
+.polaris-item-wrap-video>video {
+  width: 100%;
+  height: 350rpx;
+}
+
+/* 操作 */
+
+.polaris-item-wrap-footer {
+  width: 100%;
+  height: 79rpx;
+  display: flex;
+  align-items: center;
+  /* margin-top: -50rpx; */
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  height:100%;
+  line-height:74rpx;
+
+}
+
+.footer-item image {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.footer-item text {
+  font-size: 30rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+
+.footer-item-button {
+  background-color: white;
+  height: 79rpx;
+  flex: 0.92;
+  text-align: center;
+  padding: 0;
+  line-height: 79rpx;
+}
+
+button::after {
+  border: none;
+}
+
+
+/* 视频播放弹窗 */
+.videoDialog{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.videoDialogBG{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; 
+  opacity: 0.8;
+  z-index: 33;
+}
+
+.videoDialog-content{
+  width: 100%;
+  z-index: 40;
+  background-color: black; 
+  opacity:1;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.videoDialog-content>video{
+  width: 100%;
+}
+.closeVideoDialog{
+  width: 74rpx;
+  height: 70rpx;
+  z-index: 40;
+  margin-top: 60rpx;
+}

@@ -1,0 +1,123 @@
+page{
+  background-color: white;
+}
+.makeReinforce{
+  position: relative;
+}
+/* 头部 */
+.reinforceTop{
+  width: 100%;
+  height: 450rpx;
+  position: relative;
+}
+.reinforceTopBG{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.reinforceTopContent{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.LookTopListBtn{
+  float: right;
+}
+.userInfo{
+  margin: 0 auto;
+  width: 65%;
+  text-align: center;
+}
+.userInfo image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.userInfo view:nth-child(2){
+  font-size: 36rpx;
+  margin-top: 15rpx;
+}
+.userInfo view:nth-child(3){
+  margin-top: 15rpx;
+}
+.taskListTitle{
+  margin-top: 10rpx;
+}
+/* 应援任务 */
+.taskListBox{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top:343rpx;
+}
+.taskList{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  /* border-x-color方式，设置x的值即可：比如bottom，left，right，top，隐藏即设置透明色，不隐藏，设置你想要的阴影颜色 */
+  box-shadow: 0rpx 5rpx 10rpx 0rpx  rgba(0,0,0,0.1);
+  margin-bottom: 30rpx;
+  background-color: white;
+  position: relative;
+}
+
+.itemLine:nth-child(1){
+  font-size: 34rpx;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-bottom: 30rpx;
+}
+.itemLine:nth-child(1) text:nth-child(1){
+  color: #999999;
+
+}
+.itemLine:nth-child(1) text:nth-child(2){
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+}
+.itemLine image{
+  width: 30rpx;
+  height: 30rpx;
+  /* vertical-align: middle; */
+}
+.taskDetail{
+  font-size: 30rpx;
+  font-weight: normal;
+  float: right;
+}
+.taskSpecification{
+  font-size: 30rpx;
+  display: flex;
+}
+
+.taskSpecification text:nth-child(1){
+  color: #999999;
+  flex: 0.7;
+}
+.taskSpecification text:nth-child(2){
+  color: #666666;
+  flex: 2.2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: clip; 
+}
+
+.taskSpecification:nth-child(3){
+  margin-top: 40rpx;
+}
+.taskSpecification:nth-child(4){
+  margin-top: 50rpx;
+}
+.tasktypeBtn{
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+}

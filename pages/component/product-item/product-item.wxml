@@ -1,0 +1,18 @@
+<navigator class='product-item' style='margin-right: {{product_index%2==0?4:0}}%;' hover-class='none' url='../mall_product_detail/mall_product_detail?id={{product_item.id}}'>
+  <view class='product_img'>
+    <image src='{{product_item.cover}}'  mode='aspectFill' class='product_img'></image>
+  </view>
+  <view class='product_info_wrap'>
+    <view class='product_name'>{{product_item.name}}</view>
+    <!-- 虚拟币 -->
+    <view class='product_coin'>
+      <text class='product_coin_num'>{{product_item.coin}}</text>
+      <text class='product_coin_unit'>虚拟币</text>
+    </view>
+    <!-- 积分 -->
+    <view class='product_coin'>
+      <text class='product_coin_num'>{{product_item.credit}}</text>
+      <text class='product_coin_unit'>积分</text>
+    </view>
+  </view>
+</navigator>

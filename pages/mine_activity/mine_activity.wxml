@@ -1,0 +1,15 @@
+<!--pages/mine_activity/mine_activity.wxml-->
+<view class='container'>
+  <view wx:for="{{activities}}" wx:key="index">
+    <view class='item'>
+      <view class='line1'>
+        <text class='{{item.status===0?"new":""}}'></text>
+        <text class='title '>{{item.title}}</text>
+        <text>{{item.time}}</text>
+      </view>
+      <text class='content'>{{item.desc}}</text>
+    </view>
+  </view>
+  <import src="../template/load-more/load-more.wxml" />
+  <template  is="loading" data="{{loadComplete,count:activities.length, text:'只有这些啦~',emptyText:'等一下，再等一下就有了。'}}" />
+</view>

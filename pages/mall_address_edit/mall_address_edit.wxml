@@ -1,0 +1,26 @@
+<view class='mall_address_edit'>
+  <!-- 表单 -->
+  <view class='form'>
+    <view class='input_wrap'>
+      <text>收货人</text>
+      <input placeholder='请填写收货人姓名' bindinput='consignee_name' value='{{address_detail.name}}'></input>
+    </view>
+    <view class='input_wrap'>
+      <text>手机号</text>
+      <input placeholder='请填写收货人手机号' bindinput='telephone' maxlength='11' value='{{address_detail.phone}}'></input>
+    </view>
+    <picker mode="region" bindchange="clickAddressDialog" value="{{address_detail.regionArr}}" >
+      <view class='input_wrap'>
+        <text>所在地区</text>
+        <input placeholder='' value='{{address_detail.regionInfo}}' disabled='disabled'></input>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/GD_gengduo.png'></image>
+      </view>
+    </picker>
+    <view class='input_wrap'>
+      <text>详细地址</text>
+      <textarea placeholder='请填写街道、楼牌号等详细地址' bindinput='address_detail' value='{{address_detail.detail}}'></textarea>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class='save_button themeColorsBG' bindtap='saveAddress'>保存并使用</view>
+</view>

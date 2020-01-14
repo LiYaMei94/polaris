@@ -1,0 +1,70 @@
+<!--pages/mine-personal-info/personal_info.wxml-->
+<view class='container'>
+  <view class='portrait_block' bindtap='choosePortrait'>
+    <text style='flex:1'>头像</text>
+    <image class='protrait' src='{{userInfo.avatar}}'></image>
+    <image class='arrow_right' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+  </view>
+  <view class='simple_block' bindtap='showNicknameDialog' data-statu='open'>
+    <text>昵称</text>
+    <text>{{userInfo.nickname}}</text>
+  </view>
+  <picker mode="date" value="{{userInfo.birth===''?currentDate:userInfo.birth}}" start="1900-01-01" end="{{currentDate}}" bindchange="clickBirthDialog">
+    <view class='simple_block'>
+      <text>出生日期</text>
+      <text style='color:{{userInfo.birth===""||userInfo.birth==null||userInfo.birth===0?"#999":"#333"}}'>{{userInfo.birth===""||userInfo.birth==null||userInfo.birth===0?"请填写":userInfo.birth}}</text>
+      <image class='arrow_right' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+    </view>
+  </picker>
+  <view class='simple_block' bindtap='showSexDialog' data-statu='open'>
+    <text>性别</text>
+    <text>{{userInfo.gender===1?"男":"女"}}</text>
+  </view>
+  <view class='simple_block' bindtap='showSignatureDialog' data-statu='open'>
+    <text>签名</text>
+    <text style='color:{{userInfo.signature===""?"#999":"#333"}}'>{{userInfo.signature===""?"填写个性签名":userInfo.signature}}</text>
+  </view>
+  <picker mode="region" bindchange="clickAddressDialog" value="{{userInfo.address}}">
+    <view class='simple_block' bindtap='showAddressDialog' data-statu='open'>
+      <text>所在地</text>
+      <text style='color:{{userInfo.address===""||userInfo.address[0]===""?"#999":"#333"}}'>{{userInfo.address[0]===""||userInfo.address==""?"请填写":userInfo.address}}</text>
+      <image class='arrow_right' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+    </view>
+  </picker>
+  <button class='confirm themeColorsBG' bindtap='confirm'>确定</button>
+
+  <!-- 弹窗 -->
+  <view class='dialog' wx:if="{{showNicknameDialog||showBirthDialog||showSexDialog||showSignatureDialog||showAddressDialog}}">
+    <!--mask-->
+    <view class="dialog_screen" bindtap="closeDialog"></view>
+    <view class='dialog_container'>
+      <!-- 修改昵称 -->
+      <view class='dialog_nickname' wx:if="{{showNicknameDialog}}">
+        <text class='dn_desc'>我的昵称</text>
+        <form bindsubmit="confirmNickname">
+          <input name="nickname" value='{{userInfo.nickname}}' class='dn_content themeColorsTab' placeholder='请输入昵称' maxlength="10" focus="{{true}}" placeholder-style="color:#999999" cursor-spacing='20'></input>
+          <text class='dn_tips'>以中文或英文字母开头</text>
+          <button class='dn_confirm themeColorsFont' form-type="submit">完成</button>
+        </form>
+      </view>
+      <!-- 性别 -->
+      <view class='dialog_sex' wx:if="{{showSexDialog}}">
+        <text class='sex_desc'>我的性别</text>
+        <view class="sex_item" wx:for="{{['男','女']}}" wx:key="{{index}}" bindtap='selectSex' data-statu='{{index+1}}'>
+          <text>{{item}}</text>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cright_green.png' wx:if="{{userInfo.gender===index+1}}"></image>
+        </view>
+      </view>
+      <!-- 个性签名 -->
+      <view class='dialog_signature' wx:if="{{showSignatureDialog}}">
+        <text class='ds_desc'>我的签名</text>
+        <form bindsubmit="confirmSignature">
+          <textarea name="signature" value='{{userInfo.signature}}' class='ds_content themeColorsTab' placeholder='请输入您的个性签名' maxlength="30" focus="{{true}}" placeholder-style="color:#999999" cursor-spacing='60' bindinput="signatureInputListener"></textarea>
+          <text class='ds_tips'>{{sigTemp}}/30字</text>
+          <button class='ds_confirm themeColorsFont' form-type="submit">完成</button>
+        </form>
+      </view>
+    </view>
+  </view>
+
+</view>

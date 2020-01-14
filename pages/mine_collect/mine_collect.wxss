@@ -1,0 +1,6 @@
+/* pages/mine_collect/mine_collect.wxss */
+
+.personalDynamicList{
+  display: flex;
+  flex-direction: column;
+}

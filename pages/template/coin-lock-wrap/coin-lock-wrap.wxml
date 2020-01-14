@@ -1,0 +1,13 @@
+<template name='coin-lock-wrap'>
+  <view class='coin-lock-wrap' wx:if='{{is_coin_lock}}' catchtap='hiddendialog'>
+    <view class='coin-lock-content'>
+      <view class='coin_lock_content_title'>非常抱歉，{{coin_lock_info.way==1?"积分":"虚拟币"}}不足</view>
+      <view class='remaining_coin'>
+        <text>剩余{{coin_lock_info.way==1?"积分":"虚拟币"}}：</text>
+        <text>{{coin_lock_info.way==1?coin_lock_info.credit:coin_lock_info.coin}}</text>
+      </view>
+      <navigator url='../mall_recharge/mall_recharge' class='recharge themeColorsBG' hover-class='none'>立即充值</navigator>
+      <view class='cancel' catchtap='hiddendialog'>取消</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,36 @@
+<template name='hexagonImg'>
+  <view class='box {{index!=0?"boxNew":""}}' data-uid='{{uid}}' bindtap='goPerson'>
+    <view class='box1' >
+      <view class=' boxF' style='width: {{bgwidth}}rpx;height: {{bgheight}}rpx;'>
+        <view class=" boxS" style='width: {{bgwidth}}rpx;height: {{bgheight}}rpx;'>
+          <view class=" boxT" style="background: #57d78c;width: {{bgwidth}}rpx;height: {{bgheight}}rpx;">
+              <view class=" overlay" style='width: {{bgwidth}}rpx;height: {{bgheight}}rpx;'>
+                
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='box2' >
+      <view class='boxF' style='width: {{imgwidth}}rpx;height: {{imgheight}}rpx;'>
+        <view class="boxS" style='width: {{imgwidth}}rpx;height: {{imgheight}}rpx;'>
+          <view class="boxT" style="background-image: url({{avatar}});width: {{imgwidth}}rpx;height: {{imgheight}}rpx;">
+              <view class="overlay" style='width: {{imgwidth}}rpx;height: {{imgheight}}rpx;'>
+                
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view id="hexGrid">
+    <view class="hex1" style='width: {{bgwidth}}rpx;height: {{bgheight}}rpx;'>
+      <view class="hexIn"></view>
+    </view>
+    <view class="hex" style='width: {{imgwidth}}rpx;height: {{imgheight}}rpx;'>
+      <view class="hexIn">
+        <image src='{{avatar}}'></image>
+      </view>
+    </view>
+  </view> -->
+</template>

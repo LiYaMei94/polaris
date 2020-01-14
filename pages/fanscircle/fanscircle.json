@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "粉丝墙",
+  "onReachBottomDistance":200,
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "polaris-item-wrap": "../component/polaris-item-wrap/polaris-item-wrap",
+    "dialog-op":"../component/dialog-op/dialog-op",
+    "addFansTemplate": "../component/addFansTemplate/addFansTemplate"
+  }
+}

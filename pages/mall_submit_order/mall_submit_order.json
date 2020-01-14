@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "提交订单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "exchange-wrap": "../component/exchange-wrap/exchange-wrap",
+    "count-wrap": "../component/count-wrap/count-wrap"
+  }
+}

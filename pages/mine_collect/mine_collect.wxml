@@ -1,0 +1,12 @@
+<!--pages/mine_collect/mine_collect.wxml-->
+<view class='container'>
+  <view class='personalDynamicList'>
+    <block wx:for="{{polarisItemInfo}}" wx:key="index">
+      <polaris-item-wrap polarisItem='{{item}}' source="mine_collect" bind:openOp="openOp"></polaris-item-wrap>
+    </block>
+    <import src="../template/load-more/load-more.wxml" />
+    <template is="loading" data="{{loadComplete,count:polarisItemInfo.length, text:'只有这些啦~',emptyText:'暂无星光收藏'}}" />
+  </view>
+  <dialog-op polarisItem="{{currentOpItem}}" source="mine_collect" wx:if="{{showOp}}" bind:openOp="openOp" />
+</view>
+<image class='toTop' wx:if="{{showToTop}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/to_top.png' bindtap='toTop'></image>

@@ -1,0 +1,10 @@
+.wechat-slideview{
+  background-color: white;
+}
+.movable-view{
+  display: flex;
+  direction: row;
+}
+.slide_view_item{
+	margin-bottom: 10rpx;
+}

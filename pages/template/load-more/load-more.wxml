@@ -1,0 +1,10 @@
+<template name="loading">
+  <view class="loading-container">
+    <view class="loading-container-loading" wx:if="{{!loadComplete}}"></view>
+    <text wx:if="{{loadComplete&&count>0}}">{{text}}</text>
+    <view class='loading-container-empty' wx:if="{{loadComplete&&count===0}}">
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5ClogOut.png'></image>
+      <text>{{emptyText?emptyText:text}}</text>
+    </view>
+  </view>
+</template>

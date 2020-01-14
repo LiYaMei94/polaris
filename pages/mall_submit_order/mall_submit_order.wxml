@@ -1,0 +1,72 @@
+<view class='mall_submit_order'>
+  
+  <!-- 商品信息 -->
+  <view class='product_wrap'>
+    <view class='product_image'>
+      <image src='{{productDetail.cover}}'></image>
+    </view>
+    <view class='product_info'>
+      <view class='product_name'>{{productDetail.name}}</view>
+      <view class='product_describe'>{{productDetail.desc}}</view>
+      <view class='product_money'>
+        <text class='money'>{{productDetail.way==1?productDetail.credit:productDetail.coin}}</text>
+        <text class='money_unit'>{{productDetail.way==1?"积分":"虚拟币"}}</text>
+      </view>
+    </view>
+    <view class='count_wrap'>
+      <view>购买数量</view>
+      <view>
+        <count-wrap count='{{productDetail.count}}' is_minu_disable='{{is_minu_disable}}' bind:countChange='countChange'/>
+      </view>
+    </view>
+  </view>
+  <!-- 兑换方式 -->
+  <view class='exchange_method'>
+    <text>兑换方式</text>
+    <text>{{productDetail.way==1?"积分":"虚拟币"}}</text>
+  </view>
+  <!-- 地址 -->
+  <view class='address_info_wrap' bindtap='address' >
+    <block wx:if='{{is_default_address}}'>
+      <view class='address_info'>
+        <view class='recipient_info'>
+          <text>{{default_address.name}}</text>
+          <text>{{default_address.phone}}</text>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/GD_gengduo.png' ></image>
+        </view>
+        <view class='address_detail'>{{default_address.detail}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='address_info'>
+        <view class='recipient_info'>
+          <text style='color:#999;font-size: 30rpx;'>请添加收货地址</text>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/GD_gengduo.png' ></image>
+        </view>
+      </view>
+    </block>
+    <view class='freight_describe'>
+      <view>{{default_address.freight}}</view>
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class='bottom_button_wrap'>
+    <view class='wrap_left'>
+      <view class='product_money_bottom'>
+        <text>合计：</text>
+        <text>{{productDetail.way==1?productDetail.credit:productDetail.coin}}</text>
+        <text> {{productDetail.way==1?"积分":"虚拟币"}}</text>
+      </view>
+      <text>数量{{productDetail.count}}</text>
+    </view>
+    <view class='wrap_right themeColorsBG' bindtap='eachange'>兑换</view>
+  </view>
+</view>
+<!-- 兑换框 -->
+<exchange-wrap is_exchange='{{is_exchange}}' productDetail='{{productDetail}}' bind:hiddendialog='hiddendialog'/>
+<!-- 引入金币不足模板 -->
+<import src='../template/coin-lock-wrap/coin-lock-wrap.wxml'/>
+<template is='coin-lock-wrap' data='{{is_coin_lock,coin_lock_info}}'/>
+<!-- 引入兑换成功模板 -->
+<import src='../template/success-dialog-wrap/success-dialog-wrap.wxml'/>
+<template is='success-dialog-wrap' data='{{is_exchange_success}}' />

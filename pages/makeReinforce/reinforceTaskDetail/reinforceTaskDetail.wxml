@@ -1,0 +1,20 @@
+<view class='reinforceTaskDetail'>
+  <view class='detailContent'>
+    <view class='taskTitle'>{{taskDetailInfo.title}}</view>
+    <view class='taskInfo'>
+      <text style='padding-bottom:11px;display:block;'>任务说明：</text>
+      <!-- <rich-text nodes='{{taskDetailInfo.content}}' wx:if='{{taskDetailInfo.content}}' class='content'></rich-text> -->
+      <text style='display:block;'>{{taskDetailInfo.desc}}</text>
+    </view>
+    <view class='taskInfo'>
+      <text>任务奖励：</text>
+      <text >{{taskDetailInfo.rewards}}</text>
+    </view>
+    <view class='taskTypeBtn greenButton {{taskDetailInfo.finshed?"finshedTypeBtn":""}}' data-tasktype='{{taskDetailInfo.type}}' data-finshed='{{taskDetailInfo.finshed}}' catchtap='taskTypeClick'>{{taskDetailInfo.finshed?"已完成":taskDetailInfo.type}}</view>
+    <view class='content'>
+      <view class='contenttitle'>任务详情:</view>
+      <rich-text nodes='{{taskDetailInfo.content}}'></rich-text>
+    </view>
+  </view>
+  <view catchtap='gomakeReinforce'  class='goReinforceList greenButton'>返回应援中心</view>
+</view>

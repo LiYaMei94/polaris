@@ -1,0 +1,118 @@
+<view class='contentDetial'>
+  <view class='polaris-item-wrap'>
+    <view class='polaris-item-wrap-top'>
+      <view class='item-left' catchtap='navigateto_userHome'>
+        <image src='{{newsDetailInfo.avatar}}'></image>
+      </view>
+      <view class='item-right'>
+        <view class='item-right-line1'>
+          <view class='nameinfo '>{{newsDetailInfo.header}}</view>
+          <text wx:if="{{newsDetailInfo.essence==1}}" class='essence'>精</text>
+          <view style='flex:1'></view>
+          <image class="more" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cmore.png' catchtap='openOp' data-content='{{true}}' data-polarisItem='{{newsDetailInfo}}'></image>
+        </view>
+        <view class='item-right-line2'>
+          <view class='subtitle'>{{newsDetailInfo.from}}</view>
+          <view class='time'>{{newsDetailInfo.time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='polaris-item-wrap-text'>
+      <rich-text nodes='{{newsDetailInfo.content}}'></rich-text>
+    </view>
+    <view class='polaris-item-wrap-image' wx:if='{{newsDetailInfo.type==1}}'>
+      <block wx:for='{{newsDetailInfo.image}}' wx:key='index'>
+        <image src='{{item}}' mode='aspectFill' style='margin-right:{{(index+1)%3==0?"0rpx":"3%"}}' catchtap='showPreviewImage' data-index='{{index}}' data-images='{{newsDetailInfo.image}}'></image>
+      </block>
+    </view>
+    <view class='polaris-item-wrap-video detail-polaris-item-wrap-video' wx:if='{{newsDetailInfo.type==2&&!reviewDialogShow}}'>
+      <!-- <view catchtap='showVideoDialog' data-content='{{true}}' class='videoImgBox'>
+        <image src='{{newsDetailInfo.v_img}}' class='videoimg' style='width:{{videoImgWidth}}rpx;height:{{videoImgHeight}}rpx' bindload='videoimgload'></image>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/playerIcon.png' class='playBtn'></image>
+      </view> -->
+      <video wx:if='{{newsDetailInfo.video}}' loop='{{false}}' autoplay='{{true}}' hidden='{{reviewDialogShow}}' src='{{newsDetailInfo.video}}'></video>
+      <txv-video wx:else   vid="{{newsDetailInfo.txvid}}"   playerid="txv1"   autoplay="true"  height='225px' ></txv-video>
+    </view>
+  </view>
+  <!-- 评论 -->
+  <!-- style='padding-bottom:{{reviewArr.length<2?20:110}}rpx' -->
+  <view class='review'>
+    <view class='polaris-item-wrapTitle'>
+      <text>评论 <text class='reviewNum'>({{commentCount}})</text></text>
+    </view>
+    <!-- 评论列表 -->
+    <block wx:for='{{reviewArr}}' wx:key='comlumn_index' wx:for-index="comlumn_index">
+      <view class='review-item' catchlongpress='commentLongTouch'data-content='{{item}}'>
+        <view style='display: flex;'>
+          <view class='headImg'>
+            <image src='{{item.avatar}}'></image>
+          </view>
+          <view class='review-item-right'>
+            <view class='item-line'>
+              <view class='reviewUserName'>{{item.name}}</view>
+              <view class='like' catchtap='commentLikeClick' data-cid='{{item.id}}'>
+                <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5C{{item.good_st==0?"like":"likeActive"}}.png'></image>
+                <text>{{item.good}}</text>
+              </view>
+            </view>
+            <view class='item-line'>{{item.content}}</view>
+          </view>
+        </view>
+        <!-- 评论里面的图片展示 -->
+        <view style='display: flex;'>
+          <view style='flex:1'></view>
+          <view class='review-show-img'>
+            <block wx:for='{{item.img}}' wx:key='index' wx:for-item="image_item">
+              <image mode='aspectFill' src='{{image_item}}' style='margin-right:{{(index+1)%3==0?0:1}}%;' catchtap='showPreviewImage' data-index='{{index}}' data-images='{{item.img}}'></image>
+            </block>
+          </view>
+        </view>
+        <view class='reviewTime'>{{item.time}}</view>
+      </view>
+    </block>
+    <view class='loadMore' catchtap='loadMore' wx:if='{{commentCount!=reviewArr.length}}'>更多评论...</view>
+    <view class='loadMore' wx:if='{{reviewArr.length==0}}' catchtap='goReview'>暂无评论,
+      <text style='color:#2da9ff;'>点击去评论！</text>
+    </view>
+  </view>
+  <!-- 评论框 -->
+  <view class='review-footer' catchtap='goReview'>
+    <view class='footer-left'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CeditIcon.png'></image>
+      <text>说点什么吧~</text>
+    </view>
+    <view class='footer-right' catchtap='newsLikeClick'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5C{{newsDetailInfo.good_st==1?"likeActive":"like"}}.png'></image>
+      <text>{{newsDetailInfo.good}}</text>
+    </view>
+  </view>
+</view>
+<!-- 评论弹出框 -->
+<view class='reviewDialog' wx:if='{{reviewDialogShow}}'>
+  <view class='drop-down' catchtap='hiddenReviewDialog'>
+    <text>评论</text>
+    <view class='dropDownIcon'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CdropDown.png'></image>
+    </view>
+  </view>
+  <view class='inputBox'>
+    <textarea maxlength='100' focus='{{focus}}' placeholder='请输入评论，100字以内哦~' bindinput='getCommentText'></textarea>
+    <view class='limit'>{{CommentTextLength}}/100字</view>
+  </view>
+  <view class='comment-img-show'>
+    <block wx:for='{{showUploadImgArr}}' wx:key='index'>
+      <view class='comment-img-show-item' style='width:{{commentImgWidth}}px;margin-right:{{(index+1)%3==0?0:10}}rpx;'>
+        <image src='{{item}}' style='width:100%' mode="aspectFill"></image>
+        <view class='deleteImg' mode='aspectFit' catchtap='deleteImg' data-imgindex='{{index}}'>x</view>
+      </view>
+    </block>
+  </view>
+  <view class='operationBox'>
+    <image class='imgBtn' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CimgBtn.png' bindload='commentImgLoad' catchtap='uploadCommentImg' wx:if='{{showUploadImgArr.length<3}}'></image>
+    <text class='greenButton published {{commentClickCan?"":"issueClickCan"}}' catchtap='publishClick'> {{commentClickCan?"发表":"发表中，请勿其他操作哦!"}}</text>
+  </view>
+</view>
+<dialog-op polarisItem="{{newsDetailInfo}}" source="contentDetial" wx:if="{{showOp}}" bind:openOp="openOp" />
+<!-- 删除评论模板 -->
+<import src="../template/dialog-simple/dialog-simple.wxml" />
+<template is="dialog-simple" data="{{showDialog:showDeleteDialog,content:commentDialogContent,dialogBtnActive}}" />

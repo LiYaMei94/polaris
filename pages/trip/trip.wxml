@@ -1,0 +1,83 @@
+<!-- 引入轮播图模板 -->
+<import src='../template/swiperTemplate/swiperTemplate.wxml'/>
+<view class='trip'>
+  <!-- 轮播图 -->
+  <view class='tripBaner' wx:if="{{swiperInfo!=null&&swiperInfo.swiperimgUrls.length!==0}}">
+    <template is='swiperTemplate' data='{{swiperInfo}}'/>
+  </view>
+  <!-- tab -->
+  <view class='scroll_box'>
+    <scroll-view class='tabs' scroll-x style="width: auto;overflow:hidden;margin-left:-{{tabIndex>3?tabIndex*(153-30):''}}rpx">
+      <block wx:for='{{tabArr}}' wx:key='index'>
+        <view class='tab-item {{tabIndex==index?"themeColorsTab":""}}' data-tabIndex='{{index}}' data-month='{{item.tripDate}}' bindtap='tabChange'>
+          {{item.tripDate}}
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- tab里面的内容点击切换 -->
+  <!-- <view class='tab-content' wx:if='{{tabArr[tabIndex].tripInfo.length!=0}}'>
+    <block wx:for='{{tabArr[tabIndex].tripInfo}}' wx:key='index'>
+      <navigator class='tab-content-item' url='./tripDetail/tripDetail' hover-class='none'>
+        <view class='tab-content-bar' >
+          <view class='tab-bar'>
+            <view class='tab-dot' ></view>
+          </view>
+        </view>
+        <div class="triangle_border_left">
+        </div>
+        <view class='tripTitle'>{{item.tripTitle}}</view>
+        <view class='tripContent'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cclockgrey.png'></image>
+          <text>{{item.tripTime}}</text>
+        </view>
+        <view class='tripContent'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cpositiongrey.png'></image>
+          <text>{{item.tripPlace}}</text>
+        </view>
+      </navigator>
+    </block>
+  </view> -->
+  <scroll-view class='tab-content-sliding' scroll-y style='height: auto;overflow:hidden;' >
+    <swiper class='tab-content-swiper' style='height:{{tabArr[tabIndex].tripInfo.length!=0?swiperHeights[tabIndex]:300}}px' current='{{currentSwiper}}' bindchange='onSlideChangeEnd'>
+      <block wx:for="{{tabArr}}" wx:key='index'>
+        <swiper-item>
+          <view class='tab-content' wx:if='{{tabArr[tabIndex].tripInfo.length!=0}}'>
+            <block wx:for='{{tabArr[tabIndex].tripInfo}}' wx:key='index'>
+              <navigator class='tab-content-item' url='./tripDetail/tripDetail?tripID={{item.id}}'  hover-class='none'>
+                <view class='tab-content-bar' >
+                  <view class='tab-bar'>
+                    <view class='tab-dot themeColorsBG' ></view>
+                  </view>
+                </view>
+                <div class="triangle_border_left">
+                </div>
+                <view class='tripTitle'>{{item.title}}</view>
+                <view class='tripContent'>
+                  <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cclockgrey.png'></image>
+                  <text>{{item.time}}</text>
+                </view>
+                <view class='tripContent'>
+                  <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cpositiongrey.png'></image>
+                  <text>{{item.locale}}</text>
+                </view>
+              </navigator>
+            </block>
+          </view>
+          <!-- 当月没有任何行程 -->
+          <view class='tripNull' wx:if='{{tabArr[tabIndex].tripInfo.length==0}}'>
+            <image src='../../images/tab/tripNull.png'></image>
+            <view>一有她的行程</view>
+            <view>北极星会马上通知你哟</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </scroll-view>
+  <!-- 当月没有任何行程 -->
+  <!-- <view class='tripNull' wx:else>
+    <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CinfoNullIcon.png'></image>
+    <view>一有她的行程</view>
+    <view>北极星会马上通知你哟</view>
+  </view> -->
+</view>

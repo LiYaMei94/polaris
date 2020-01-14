@@ -1,0 +1,11 @@
+<view class='signInSuccessfully' catchtap='closeAddFans' wx:if='{{addFansShow}}'>
+  <view class='addFansDialog'>
+    <view class='addFansDialogTitle'>加入粉丝群</view>
+    <view class='GroupMasterInformation'>
+      <view class='titleText'>进群-遇见志同道合的星光</view>
+      <view class='masterTitle'>群主微信号:</view>
+      <view class='mastername'>emmadumont2018</view>
+    </view>
+    <view class='copyBtn' data-mastername='emmadumont2018' catchtap='copyMasterInfo'>一键复制</view>
+  </view>
+</view>

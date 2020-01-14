@@ -1,0 +1,52 @@
+<view class='mall_product_detail'>
+  <!-- 商品主图 -->
+  <view class='product_image'>
+    <image src='{{productDetail.cover}}'  mode='aspectFill'></image>
+  </view>
+  <!-- 商品信息 -->
+  <view class='product_info'>
+    <view class='product_name_wrap'>
+      <text class='product_name'>{{productDetail.name}}</text>
+      <button open-type='share' hover-class='none' data-product_name='{{productDetail.name}}'>
+        <image class='share_button' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/FX_fenxiang.png'></image>
+      </button>
+    </view>
+    <view class='product_describe'>
+      {{productDetail.desc}}
+    </view>
+    <view class='exchange_wrap'>
+      <view class='exchange_wrap_title'>兑换方式</view>
+      <view class='exchange_method'>
+        <radio-group bindchange='exchange_methods'>
+          <view class='method_item'>
+            <text>{{productDetail.coin}}</text>
+            <text>虚拟币</text>
+            <radio color='#2d9fff' checked='{{productDetail.way==2}}' value='虚拟币'></radio>
+          </view>
+          <view class='method_item'>
+            <text>{{productDetail.credit}}</text>
+            <text>积分</text>
+            <radio color='#2d9fff' width='36' checked='{{productDetail.way==1}}' value='积分'></radio>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <!-- 运费描述 -->
+  <view class='freight_describe'>
+    <view class='freight_describe_title'>{{productDetail.freight}}</view>
+  </view>
+  <!-- 底部按钮栏 -->
+  <view class='bottom_button_wrap'>
+    <view class='wrap_left'>
+      <view class='product_money'>
+        <text>合计：</text>
+        <text> {{productDetail.way==1?productDetail.credit:productDetail.coin}}</text>
+        <text> {{productDetail.way==1?"积分":"虚拟币"}}</text>
+      </view>
+      <text>数量1</text>
+    </view>
+    <view class='wrap_right themeColorsBG' bindtap='exchange'>兑换</view>
+  </view>
+  
+</view>

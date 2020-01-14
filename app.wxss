@@ -1,0 +1,173 @@
+/**app.wxss**/
+/* 主题颜色轮播图模板中要修改当前轮播图的点的颜色 */
+@import '/pages/template/load-more/load-more.wxss';
+page {
+  background-color: #eff3f6;
+  height: 100%;
+  font-size: 32rpx;
+  color: #333;
+}
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+/* 主题色背景 */
+.themeColorsBG{
+  background-color: #57d78c;
+}
+/* 主题色字体 */
+.themeColorsFont{
+  color: #57D78C!important;
+}
+/* 主题色tab字体和下边框 */
+.themeColorsTab{
+  color: #57D78C!important;
+  border-bottom: 1rpx solid #57D78C;
+}
+/* 列表上方的标题 例如：个人动态等*/
+.polaris-item-wrapTitle{
+  font-size: 30rpx;
+  font-weight: 900;
+  background-color: white;
+  padding: 30rpx 0 20rpx 30rpx;
+}
+.polaris-item-wrapTitle>text:nth-child(1){
+  border-left: 7rpx solid #57D78C;
+  padding-left: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  display: inline-block;
+}
+.polaris-item-wrapTitle>text:nth-child(2){
+  float: right;
+  margin-right: 30rpx;
+  color: #2DA9FF;
+  font-weight: normal;
+}
+/* 主题色按钮 */
+.greenButton{
+  width: 180rpx;
+  height: 70rpx;
+  color: white;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 15rpx;
+  background-color: #57D78C;
+}
+
+.popBottomEnter{
+  -webkit-animation: popup-bottom-enter 0.2s ease-in ;
+  animation: popup-bottom-enter 0.2s ease-in;
+}
+
+.popBottomExit{
+  -webkit-animation: popup-bottom-leave 0.2s ease-in ;
+  animation: popup-bottom-leave 0.2s ease-in;
+}
+
+/* 下方弹框动画 */
+@-webkit-keyframes popup-bottom-enter {
+  from {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+  }
+
+  to {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes popup-bottom-enter {
+ from {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+  }
+
+  to {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes popup-bottom-leave {
+  from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  to {
+    -webkit-transform: translate( 0,100%);
+    transform: translate( 0,100%);
+  }
+}
+
+@keyframes popup-bottom-leave {
+ from {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  to {
+    -webkit-transform: translate( 0,100%);
+    transform: translate( 0,100%);
+  }
+}
+
+/* 等级图标中的内容，例如VIP12等 */
+.levelConainer{
+  width:86rpx;
+  height:70rpx;
+  float: left;
+  margin-top:-18rpx;
+  margin-left:19rpx;
+
+}
+.levelConainer image{
+  width: 100%;
+  height: 100%;
+}
+.levelInfo{
+  position: absolute;
+  font-size: 20rpx!important;
+  font-weight: 900;
+  font-style: italic;
+  height: 100%;
+  line-height: 55rpx;
+  width: 100%;
+  text-align: center;
+  z-index: 333;
+  top: 0;
+  left: 0;
+  padding-left: 25rpx;
+  box-sizing: border-box;
+}
+.VIP{
+  color: white;
+  height: 100%;
+}
+.levelNum{
+  color: #be7000;
+  margin-left: 5rpx;
+  height: 100%;
+}
+/* 任务完成的按钮样式 */
+.finshedTypeBtn{
+  background-color: #ccc;
+}
+
+/* 置顶图标 */
+.toTop{
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 25rpx;
+  right: 20rpx;
+}

@@ -1,0 +1,22 @@
+<radio-group bindchange='radioChange'>
+  <block wx:for='{{address}}' wx:key='index'>
+    <view class='address-item'>
+    <view class='item_left'>
+      <radio class='radio' color='#57d78c' checked='{{item.checked}}' value='{{item.id}}'></radio>
+    </view>
+    <view class='item_center'>
+      <view class='userInfo'>
+        <text>{{item.name}}</text>
+        <text class='telephone'>{{item.phone}}</text>
+      </view>
+      <view class='addressText'>
+        {{item.detail}}
+      </view>
+    </view>
+    <view class='item_right'>
+      <navigator class='edit' hover-class='none' url='../mall_address_edit/mall_address_edit?id={{item.id}}'>编辑</navigator>
+      <view class='delete' bindtap='deleteAddress' data-id='{{item.id}}'>删除</view>
+    </view>
+    </view>
+  </block>
+</radio-group>

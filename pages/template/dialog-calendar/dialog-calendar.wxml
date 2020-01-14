@@ -1,0 +1,32 @@
+<template name="dialog-calendar">
+  <view class="dialog-calendar-container" bindtap='showSignDialog' data-content='{{false}}' catchtouchmove='showSignDialog'>
+    <view class='dialog-calendar-back'></view>
+    <view class='dialog-calendar-content'>
+      <!-- 顶部区域 -->
+      <view class='dialog-calendar-top'>
+        <view class='dialog-calendar-title'>{{signCalendar.month}}月 签到</view>
+        <view class='dialog-calendar-head'>
+          <block wx:for="一二三四五六日" wx:key="index">
+            <view class='dialog-calendar-head-item'>{{item}}</view>
+          </block>
+        </view>
+      </view>
+      <!-- 下方签到情况 -->
+      <view class='dialog-calendar-calendar'>
+        <block wx:for="{{signCalendar.data}}" wx:key="index">
+          <view class='dialog-calendar-calendar-item {{item.isCurrentMonth===0?"currentMonth":"otherMonth"}}' bindtap='tabCalendarItem' data-content='{{item}}'>
+            <view class='dialog-calendar-calendar-text-block'>
+              <view class='dialog-calendar-calendar-text' style='color:{{item.number===signCalendar.today&&item.isCurrentMonth===0?"#fff":transparent}}'> {{item.number}}</view>
+              <view wx:if="{{item.number===signCalendar.today&&item.isCurrentMonth===0}}" class='dialog-calendar-calendar-back themeColorsBG'></view>
+            </view>
+
+            <view class='dialog-calendar-calendar-img-container'>
+              <image wx:if="{{((item.number<signCalendar.today&&item.isCurrentMonth===0)||item.isCurrentMonth===-1)&&item.isSign}}" class="{{item.isSign?'dialog-calendar-calendar-img-y':'dialog-calendar-calendar-img-n'}}" src="https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csign_y.png"></image>
+              <view wx:if="{{((item.number<signCalendar.today&&item.isCurrentMonth===0)||item.isCurrentMonth===-1)&&!item.isSign}}">补签</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

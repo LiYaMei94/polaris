@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "address-item": "../component/address-item/address-item"
+  }
+}

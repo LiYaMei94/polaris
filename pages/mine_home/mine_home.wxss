@@ -1,0 +1,239 @@
+/* pages/mine_home/mine_home.wxss */
+@import "../template/dialog-classify/dialog-classify.wxss";
+@import "../template/dialog-calendar/dialog-calendar.wxss";
+
+.back {
+  width: 100%;
+  height: 374rpx;
+  background-color: #324d56;
+  position: absolute;
+  z-index: -1;
+}
+
+/* 个人信息 */
+
+.person {
+  width: 692rpx;
+  padding: 28rpx;
+  margin: 28rpx auto;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5rpx 5rpx 10rpx 0rpx rgba(119, 158, 188, 0.15);
+}
+
+/* 展示 */
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10rpx 0 29rpx 0;
+}
+
+.info_left{
+  width: 190rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.l_portrait_block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: ceter;
+  margin-top: 10rpx;
+}
+
+.l_level {
+  width: 192rpx;
+  height: 196rpx;
+  position: absolute;
+  left: 27rpx;
+}
+
+.l_portrait {
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 10rpx;
+}
+
+/* vip */
+
+.vip {
+  width: 128rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  /* margin-bottom: 20rpx; */
+}
+
+.vip image {
+  width: 86rpx;
+  height: 70rpx;
+}
+
+/* .level_info {
+  color: white;
+  font-size: 20rpx;
+  line-height: 1;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.level {
+  color: #be7000;
+  margin-left: 2rpx;
+} */
+
+.info_right {
+  flex: 1;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.r_name_block {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.name {
+  /* text-shadow: 1rpx  0 #333333; */
+  /* line-height: 1.5; */
+  font-weight: bold;
+  height: auto;
+  max-width: 80%;
+  letter-spacing: 2rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sex {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  margin-right: 80rpx;
+}
+
+/* 编辑 */
+.edit {
+  color: #2da9ff;
+  font-size: 26rpx;
+  text-align: right;
+  line-height: 50rpx;
+  display: block;
+  width: 100rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 0;
+}
+
+.r_addr_age {
+  color: #333;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 15rpx;
+}
+
+
+
+.line {
+  width: 100%;
+  background-color: #e5e5e5;
+  height: 3rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 个人信息操作区 */
+
+.op {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 5rpx;
+}
+.op view{
+  display: flex;
+  align-items: center;
+  color: #999999;
+  font-size: 28rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.op image {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 21rpx;
+}
+
+/* 我的发布 */
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post_title {
+  display: flex;
+  font-size: 26rpx;
+  color: #999;
+  align-items: center;
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  background-color: white;
+
+  position: relative;
+}
+
+.post_desc {
+  font-size: 30rpx;
+  color: #333;
+  border-left: 7rpx solid #57d78c;
+  line-height: 1;
+  padding-left: 25rpx;
+  margin-right: 8rpx;
+  font-weight: bold;
+  /* text-shadow: 1rpx  0 #333333; */
+}
+
+.more {
+  display: flex;
+  align-items: center;
+}
+
+.more image {
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 12rpx;
+}
+
+.personalDynamicList{
+  display: flex;
+  flex-direction: column;
+}

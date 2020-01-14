@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "polaris-item-wrap": "../component/polaris-item-wrap/polaris-item-wrap",
+    "dialog-op": "../component/dialog-op/dialog-op"
+  }
+}

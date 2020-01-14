@@ -1,0 +1,72 @@
+
+.boxF, .boxS, .boxT, .overlay {
+  overflow: hidden;
+}
+
+.boxF, .boxS {
+  visibility: hidden;
+}
+
+.boxF {
+  transform: rotate(120deg);
+  float: left;
+  -ms-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+}
+
+.boxS {
+  transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+}
+
+.boxT {
+  transform: rotate(-60deg);
+  background: no-repeat 50% center;
+  background-size: 125% auto;
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  visibility: visible;
+}
+
+.overlay {
+  transition: all 250ms ease-in-out 0s;
+  display: none;
+  position: relative;
+}
+
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.boxT:hover .overlay {
+  display: block;
+}
+.box{
+  height: 260rpx;
+  width: 210rpx;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+.boxNew{
+  top: 45rpx;
+}
+.box1{
+  margin-left: 5rpx;
+}
+.boxNew>.box1{
+  margin-left: 15rpx;
+}
+.box2{
+  position: absolute;
+  top: 6rpx;
+  margin-left: 10rpx;
+}
+.boxNew>.box2{
+  top: 6.4rpx;
+  margin-left: 20rpx;
+} 

@@ -1,0 +1,47 @@
+<view class='makeReinforce'>
+  <view class='reinforceTop'>
+    <image class='reinforceTopBG' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CreinforceTopBG.png'></image>
+    <view class='reinforceTopContent'>
+      <navigator hover-class='none' url='../ranking/ranking' class='LookTopListBtn themeColorsFont'>查看榜单</navigator>
+      <view class='userInfo'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/TX_touxiang.png'></image>
+        <view>为北极星打call</view>
+        <view>我的积分：{{userInfo.credit}}</view>
+      </view>
+      <view class='taskListTitle'>应援任务</view>
+    </view>
+  </view>
+  <view class='taskListBox'>
+    <block wx:for='{{taskListArr}}' wx:key='index'>
+      <view class='taskList' >
+        <navigator url='./reinforceTaskDetail/reinforceTaskDetail?taskID={{item.id}}' hover-class='none'>
+          <view class='itemLine'>
+            <text>{{index+1}}.</text>
+            <text>{{item.title}}</text>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CQD_qiandao.png' wx:if='{{item.id==1}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CWB_weibo.png' wx:if='{{item.id==3}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CWB_weibo.png' wx:if='{{item.id==4}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CBDTB_tieba.png' wx:if='{{item.id==5}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CBD_songhua.png' wx:if='{{item.id==6}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CWB_mingxingbang.png' wx:if='{{item.id==7}}'></image>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/taskIcon%5CDY_douyin.png' wx:if='{{item.id==8}}'></image>
+            <text class='taskDetail themeColorsFont'>详情 ></text>
+          </view>
+          <view class='itemLine taskSpecification'>
+            <text>任务说明：</text>
+            <text class='descText' >{{item.desc}}</text>
+          </view>
+          <view class='itemLine taskSpecification'>
+            <text>任务奖励：</text>
+            <text>{{item.rewards}}</text>
+          </view>
+          <!-- <view class='taskSpecification'>
+            <text>{{item.daily}}</text>
+          </view> -->
+        </navigator>
+        <view class='tasktypeBtn greenButton {{item.finshed?"finshedTypeBtn":""}}' data-taskID='{{item.id}}'  data-tasktype='{{item.type}}' data-finshed='{{item.finshed}}' catchtap='taskTypeClick'>{{item.finshed?"已完成":item.type}}</view>
+      </view>
+      
+    </block>
+  </view>
+</view>

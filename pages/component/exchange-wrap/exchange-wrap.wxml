@@ -1,0 +1,23 @@
+<view class='exchange-wrap' style='height:{{windowWidth}}px' wx:if='{{is_exchange}}' data-type='cancel' catchtap='hidden_exchange'>
+  <view class='exchange-content'>
+    <view class='exchange-title'>是否兑换下列商品？</view>
+    <view class='exchange-product'>
+      <view class='exchange-line'>
+        <text class='line-left'>商品名称</text>
+        <text class='line-right'>{{productDetail.name}}</text>
+      </view>
+      <view class='exchange-line'>
+        <text class='line-left'>商品数量</text>
+        <text class='line-right'>{{productDetail.count}}</text>
+      </view>
+      <view class='exchange-line'>
+        <text class='line-left'>{{productDetail.way==1?"积分":"虚拟币"}}</text>
+        <text class='line-right line-right-money'>-{{productDetail.way==1?productDetail.credit:productDetail.coin}}</text>
+      </view>
+    </view>
+    <view class='button-wrap'>
+      <view class='confirm ' catchtap='hidden_exchange' data-type='confirm'>确定</view>
+      <view class='cancel' catchtap='hidden_exchange' data-type='cancel'>取消</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class='postEdit'>
+<!-- 标题 -->
+  <!-- <view class='editTitle border-bottom'>
+    <input placeholder='请输入标题'></input>
+  </view> -->
+  <!-- 内容，文字的 -->
+  <view class='editContent {{editType=="2"||editType=="1"?"border-bottom":""}}'>
+    <textarea placeholder='{{editType=="3"?"来点有爱的文字...":editType=="2"?"来点有爱的文字；加点视频更生动~":"来点有爱的文字；加点图片更生动~"}}'  minlength="{{min}}" maxlength="{{max}}" bindinput="textareInput"></textarea>
+     <!-- <view class='inputWordNum'>已输入{{valueLength}}字</view> -->
+  </view>
+  <!-- 内容，图片的 -->
+  <view class='edit-content-img' wx:if='{{editType==1}}' >
+    <view class='edit-content-img-show-box'>
+      <block wx:for='{{showuploadImgArr}}' wx:key='index'>
+        <view class='show-item-img' style='margin-right:{{(index+1)%3==0?"0":"3"}}%;' wx:if='{{showuploadImgArr.length!=0}}'>
+          <image src='{{item}}' mode='aspectFill' class='img-show-base64'></image>
+          <view class='deleteImg' catchtap='deleteImg' data-imgindex='{{index}}'>x</view>
+        </view>
+      </block>
+      <view class='add-img-btn' catchtap='uploadFile' wx:if='{{showuploadImgArr.length<3}}'>+</view>
+    </view>
+  </view>
+  <!-- 内容。视频的 -->
+  <view class='edit-content-img' wx:if='{{editType==2}}'>
+    <view class='edit-content-img-show-box'>
+      <view class='show-item-img' wx:if='{{uploadVideoArr}}' style='margin-right:{{canvasMarginRight}}rpx;width:320rpx; background-color: black;'>
+        <image src='https://bkssl.bdimg.com/static/wiki-m-lemma/widget/content-n/moduleContent/movieNew/img/movie-default_b0e5735.png'  style='width:100%;height:100%;' mode='aspectFill'></image>
+        <!-- <image class='videoPlayBtn' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/playerIcon.png'></image> -->
+        <view class='deleteImg' catchtap='deleteImg' data-imgindex='{{index}}'>x</view>
+      </view>
+      <view class='add-img-btn'  catchtap='uploadFile' wx:if='{{!uploadVideoArr}}'>+</view>
+    </view>
+  </view>
+  <view class='issue'>
+    <view class='issueBtn greenButton {{issueClickCan?"":"issueClickCan"}}' style='height:91rpx;line-height:91rpx' catchtap='issueClick'>{{issueClickCan?"发布":"发布中，请勿其他操作哦！"}}</view>
+  </view>
+  
+</view>

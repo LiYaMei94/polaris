@@ -1,0 +1,12 @@
+<template name="dialog-simple">
+  <view class='dialog-simple' wx:if="{{showDialog}}">
+    <view class='dialog-simple-back' data-type='{{false}}' catchtouchstart='onClickDeleteOp' ></view>
+    <view class='dialog-simple-container dialog-comment-simple-container'>
+      <text class='dialog-simple-content dialog-comment-simple-content' >{{content}}</text>
+      <view class='dialog-simple-select dialog-comment-simple-select' >
+        <view class='dialog-simple-op dialog-comment-simple-op {{dialogBtnActive==0?"themeColorsFont":""}}' bindtap='onClickDeleteOp' data-type='{{false}}'>{{negativeText?negativeText:'取消'}}</view>
+        <view class='dialog-simple-op dialog-comment-simple-op  {{dialogBtnActive==1?"themeColorsFont":""}}' bindtap='onClickDeleteOp' data-type='{{true}}'>{{positiveText?positiveText:'删除'}}</view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,28 @@
+<view class='tripDetail'>
+  <view class='tripDetailHeader'>
+    <view class='tripTitle'>{{tripDetailInfo.title}}</view>
+    <view class='tripDateInfo'>
+      <view class='datePlace'>
+        <view class='date'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Ccalendar.png'></image>
+          <text>{{tripDetailInfo.week}} / {{tripDetailInfo.date}}</text>
+        </view>
+        <view class='place'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cposition.png'></image>
+          <text>{{tripDetailInfo.locale}}</text>
+        </view>
+      </view>
+      <view class='time'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5Cclock.png'></image>
+        <text>{{tripDetailInfo.time}}</text>
+      </view>
+    </view>
+    <button class='shareBtn greenButton' open-type='share'>
+      分享
+    </button>
+  </view>
+  <view class='announcementActivity'>
+    <view class='contentTitle'>公告内容</view>
+    <rich-text nodes='{{tripDetailInfo.content}}' wx:if='{{tripDetailInfo.content}}'></rich-text>
+  </view>
+</view>

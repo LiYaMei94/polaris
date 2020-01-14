@@ -1,0 +1,36 @@
+<!--pages/fanscircle/fanscircle.wxml-->
+<import src='../template/swiperTemplate/swiperTemplate.wxml' />
+<view class='container'>
+  <!-- 轮播图 -->
+  <view class='banner' wx:if="{{swiperInfo!=null&&swiperInfo.swiperimgUrls.length!==0}}">
+    <template is='swiperTemplate' data='{{swiperInfo}}' />
+  </view>
+  <!-- 粉丝墙 -->
+  <view class='fans'>
+    <view class='fans_head'>
+      <block wx:for="{{['粉丝墙','精华']}}" wx:key="index">
+        <view class='item' bindtap='switchPage' data-index='{{index}}'>
+          <text class='{{currentIndex===index?"select_head":"simple_head"}}'>{{item}}</text>
+        </view>
+      </block>
+      <view style='flex:1'></view>
+      <text class='addfansgroup' catchtap='AddFans'>加入粉丝群</text>
+    </view>
+    <!--   -->
+    <view class="fans_content">
+      <block wx:for="{{polarisItemInfo}}" wx:key="index">
+        <view wx:if="{{currentIndex===index}}" class="polaris-list" style='padding-bottom:2rpx'>
+          <block wx:for='{{item}}' wx:for-item="polarisItem" wx:for-index="polarisIndex" wx:key='polarisIndex'>
+            <polaris-item-wrap bind:updatelist='updatelist' polarisItem='{{polarisItem}}' source="fanscircle" bind:openOp="openOp"></polaris-item-wrap>
+          </block>
+          <import src="../template/load-more/load-more.wxml" />
+          <template is="loading" data="{{loadComplete,count:polarisItemInfo[index].length, text:'只有这些啦~',emptyText:'等你！来守护星光。'}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <dialog-op polarisItem="{{currentOpItem}}" source="fanscircle" wx:if="{{showOp}}" bind:openOp="openOp" />
+  <image class='toTop' wx:if="{{showToTop}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/to_top.png' bindtap='toTop'></image>
+</view>
+<!-- 加入粉丝群弹窗 -->
+<addFansTemplate addFansShow='{{addFansShow}}'></addFansTemplate>

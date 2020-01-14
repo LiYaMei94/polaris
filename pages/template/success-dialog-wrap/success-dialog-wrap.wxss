@@ -1,0 +1,35 @@
+.success-dialog-content{
+  padding: 0;
+}
+.success-dialog_title{
+  width: 100%;
+  line-height: 180rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  color: white;
+  font-size: 36rpx;
+  text-align: center;
+  position: relative;
+  margin-bottom: 70rpx;
+}
+.success-dialog_title>image{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -25rpx;
+}
+.success-dialog_title>text{
+  margin-left: 75rpx;
+}
+.remaining_coin{
+  color: #999;
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.remaining_coin>text:nth-child(2){
+  color:  #2d9fff
+}
+.success_confirm{
+  margin-top: 80rpx;
+}

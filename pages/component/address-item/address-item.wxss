@@ -1,0 +1,57 @@
+.address-item{
+  width: 100%;
+  display: flex;
+  background-color: white;
+  margin-bottom: 10rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.item_left{
+  flex: 1.2;
+  display: flex;
+}
+.item_left>.radio{
+  align-self: center;
+}
+
+.item_center{
+  flex: 5.3;
+}
+.userInfo{
+  font-size: 36rpx;
+
+}
+.telephone{
+  float: right;
+}
+.addressText{
+  text-overflow: ellipsis; 
+  overflow : hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #333;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  line-height: 48rpx;
+}
+.item_right{
+  flex: 1.5;
+  text-align: center;
+  color: #2d9fff;
+  position: relative;
+}
+.item_right>view,.item_right>navigator{
+  position: absolute;
+  right: -11rpx;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.edit{
+  top: 5rpx;
+}
+.delete{
+  bottom: 5rpx;
+}

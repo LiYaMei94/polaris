@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商城",
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "product-item":"../component/product-item/product-item"
+    
+  }
+}

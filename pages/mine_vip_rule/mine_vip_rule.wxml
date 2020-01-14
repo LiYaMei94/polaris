@@ -1,0 +1,26 @@
+<!--pages/mine_vip_rule/mine_vip_rule.wxml-->
+<view class='container'>
+  <!-- 头部 -->
+  <view class='header'>
+    <view class='header-item' bindtap='clickHeaderTap' data-type='{{0}}'>
+      <text class='{{type===0?"header-enable":"header-disable"}}'>会员规则</text>
+    </view>
+    <view class='header-item' bindtap='clickHeaderTap' data-type='{{1}}'>
+      <text class='{{type===1?"header-enable":"header-disable"}}'>积分规则</text>
+    </view>
+  </view>
+  <view class='content themeColorsBG'>
+    <swiper style='flex:1;' current='{{type}}' bindchange="clickHeaderTap">
+      <swiper-item>
+        <scroll-view style='height: 100%;' scroll-y>
+          <image class="vip" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5CVIPDJ_guize.png' mode='widthFix' catchtap='preview' data-url='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5CVIPDJ_guize.png'></image>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view style='height: 100%;' scroll-y>
+          <image class="jifen" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5CJF_jifen.png' mode='widthFix' catchtap='preview' data-url='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5CJF_jifen.png'></image>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

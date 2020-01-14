@@ -1,0 +1,5 @@
+<view class='mall_wrap'>
+  <block wx:for='{{product}}' wx:key='index'>
+    <product-item product_item='{{item}}' product_index='{{index}}'/>
+  </block>
+</view>

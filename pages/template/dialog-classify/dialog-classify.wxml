@@ -1,0 +1,13 @@
+<template name="dialog-classify">
+  <view class='dialog-classify' wx:if="{{dialog_classify_data.show}}">
+    <view class='classify-back' bindtap='open_classify' data-content='{{false}}' catchtouchmove="open_classify"></view>
+    <view class='classify-content'>
+      <image class="classify-content-back" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cclassify_back.png'></image>
+      <view class='classify-content-center'>
+        <text class='{{dialog_classify_data.index===0?"themeColorsFont":""}}' bindtap='click_classify' data-content='{{0}}'>按时间</text>
+        <view class='classify-content-center-line'></view>
+        <text class='{{dialog_classify_data.index===1?"themeColorsFont":""}}' bindtap='click_classify' data-content='{{1}}'>按热度</text>
+      </view>
+    </view>
+  </view>
+</template>

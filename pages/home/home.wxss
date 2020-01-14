@@ -1,0 +1,134 @@
+@import '../template/swiperTemplate/swiperTemplate.wxss';
+page{
+  height: 100%;
+}
+.homeFixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+/* 首页顶部内容 */
+.homeContentTop{
+  width: 100%;
+  background-color: white;
+  padding:30rpx 30rpx 40rpx 30rpx;
+  box-sizing: border-box;
+}
+/* 粉丝信息 */
+.fansInfoBox{
+  width: 100%;
+  height: 90rpx;
+}
+.fansInfo{
+  float: left;
+}
+.fansinfoline{
+  height: 32rpx;
+  line-height: 32rpx;
+}
+.fansinfoline:nth-child(1){
+  position: relative;
+}
+.fansinfoline:nth-child(2){
+  margin-top: 25rpx;
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.fansinfoline>.polarisName{
+  float: left;
+  margin-top: 15rpx;
+}
+.signInBtn{
+  float: right;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+}
+/* 轮播图 */
+.banner{
+  width: 100%;
+  margin-top: 30rpx;
+  position: relative;
+}
+
+/* tab */
+.homeTab{
+  width: 100%;
+  display: flex;
+  margin-top: 40rpx;
+}
+.tabitem{
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+}
+.tabitem image{
+  width: 100rpx;
+  height: 100rpx;
+}
+/* 个人动态列表 */
+.personalDynamic{
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 签到成功框 */
+.signInSuccessfully{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.signInDialog{
+  /* width: 65%;
+  height: 505rpx; */
+  width: 600rpx;
+  height: 620rpx;
+  position: relative;
+  top:40%;
+  margin-top: -310rpx;
+  left: 50%;
+  margin-left: -300rpx;
+}
+.bgImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+.confirmBtn{
+  position: absolute;
+  bottom: 40rpx;
+  width: 300rpx;
+  height: 70rpx;
+  left: 20%;
+}
+.closesignInDialog{
+  width: 74rpx;
+  height: 70rpx;
+  position:absolute;
+  bottom:24%;
+  left: 50%;
+  margin-left: -37rpx;
+}
+.dialogText{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 50rpx;
+  padding-left: 31rpx;
+  /* left: 20rpx; */
+  box-sizing: border-box;
+  font-size: 34rpx;
+  color: white;
+}
+
+.personalDynamicList{
+  display: flex;
+  flex-direction: column;
+}

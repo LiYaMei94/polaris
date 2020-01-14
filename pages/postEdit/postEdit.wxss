@@ -1,0 +1,124 @@
+.postEdit{
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  
+}
+/* 编辑标题 */
+/* .editTitle{
+  width: 100%;
+  height: 85rpx;
+  
+}
+.editTitle input{
+  width: 100%;
+  height: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+} */
+/* 编辑内容 */
+.editContent{
+  padding: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 320rpx;
+  position: relative;
+  background-color: white;
+}
+.editContent textarea{
+  height: 100%;
+  width: 100%;
+}
+.inputWordNum{
+  position: absolute;
+  color: #999;
+  right: 30rpx;
+  bottom: 30rpx;
+}
+/* 上传图片按钮 */
+.edit-content-img-show-box{
+  overflow: hidden;
+}
+.add-img-btn{
+  /* width: 215rpx; */
+  width: 30%;
+  height: 215rpx;
+  border: 5rpx dashed #999999;
+  text-align: center;
+  line-height: 220rpx;
+  font-size: 70rpx;
+  color: #999999;
+  float: left;
+}
+
+/* 图片展示框 */
+.edit-content-img{
+  padding:40rpx 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+}
+.show-item-img{
+  float: left;
+  position: relative;
+  /* width: 220rpx; */
+  width: 31.2%;
+  margin-bottom: 10rpx;
+  height: 220rpx;
+  overflow: hidden;
+}
+.img-show-base64{
+  width: 100%;
+  height: 100%;
+}
+/* 视频播放按钮 */
+.videoPlayBtn{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -40rpx;
+  left: 50%;
+  margin-left: -40rpx;
+}
+.videoTitle{
+  width: 100%;
+  height: 220rpx;
+  line-height: 220rpx;
+  text-align: center;
+  color: white;
+}
+/* 删除图片或者视频 */
+.deleteImg{
+  width: 65rpx;
+  height: 65rpx;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 65rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* 发布按钮 */
+.issue{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 20%;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.issueBtn{
+  width: 100%;
+  color: white;
+}
+
+/* 下边框 */
+.border-bottom{
+  border-bottom: 20rpx solid #eff3f6;
+}
+.issueClickCan{
+  background-color:#ccc;
+}

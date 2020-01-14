@@ -1,0 +1,62 @@
+.exchange-wrap{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0rpx;
+  left: 0;
+}
+.exchange-content{
+  width: 600rpx;
+	height: 600rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -300rpx;
+  margin-top: -400rpx;
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+.exchange-title{
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  margin: 20rpx 0 70rpx;
+}
+.exchange-line{
+  width: 100%;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.line-left{
+  float: left;
+  color: #999;
+}
+.line-right{
+  float: right;
+}
+.line-right-money{
+  color: #ff0000;
+}
+.button-wrap{
+  overflow: hidden;
+  margin-top: 60rpx;
+}
+.confirm,.cancel{
+  width: 230rpx;
+	line-height: 88rpx;
+	border-radius: 10rpx; 
+  text-align: center;
+  float: left;
+}
+.confirm{
+  background-color: #57d78c;
+  color: white;
+}
+.cancel{
+  margin-left: 37rpx;
+  border: solid 1rpx #dcdcdc;
+  color: #999999;
+}

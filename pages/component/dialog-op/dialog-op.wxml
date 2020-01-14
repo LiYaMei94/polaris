@@ -1,0 +1,51 @@
+<!--pages/component/dialog-op/dialog-op.wxml-->
+<!-- 选项弹窗 -->
+<view class='dialog-op' catchtap='openOp' data-content='{{false}}' catchtouchmove='openOp'>
+  <view class='dialog-back'></view>
+  <view class='dialog-content' wx:if="{{!showDeleteAlert}}">
+    <!-- <view class='row' wx:if="{{status[0]===0}}" catchtap='clickOp' data-content='0'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_0.png' ></image>
+      <view>屏蔽帖子</view>
+    </view>
+    <view class='row' wx:if="{{status[0]===1}}" catchtap='clickOp' data-content='1'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_1.png'></image>
+      <view>取消屏蔽帖子</view>
+    </view>
+    <view class='row' wx:if="{{status[1]===0}}" catchtap='clickOp' data-content='2'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_2.png'></image>
+      <view>屏蔽用户</view>
+    </view>
+    <view class='row' wx:if="{{status[1]===1}}" catchtap='clickOp' data-content='3'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_3.png'></image>
+      <view>取消屏蔽用户</view>
+    </view> -->
+    <view class='row' wx:if="{{status[2]===0}}" catchtap='clickOp' data-content='4'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_4.png'></image>
+      <view>收藏</view>
+    </view>
+    <view class='row' wx:if="{{status[2]===1}}" catchtap='clickOp' data-content='5'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_5.png'></image>
+      <view>取消收藏</view>
+    </view>
+    <view class='row' wx:if="{{status[3]===1}}" catchtap='clickOp' data-content='6'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_6.png'></image>
+      <view>删除</view>
+    </view>
+    <view class='row' wx:if="{{status[4]===1}}" catchtap='clickOp' data-content='7'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_7.png'></image>
+      <view>举报</view>
+    </view>
+    <view class='row' style='margin-top: 8rpx;'>
+    <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/polaris-item-wrap%5Cop_8.png'></image>
+      <view>取消</view>
+    </view>
+  </view>
+  <view class='deleteAlert' wx:if="{{showDeleteAlert}}">
+    <view class='deleteAlert-desc'>删除后无法恢复，确定删除么？</view>
+    <view class='delete-select'>
+      <view style='flex:1'></view>
+      <view class='delete-select-op themeColorsFont' bindtap='onClickDeleteOp' data-type='{{false}}'>取消</view>
+      <view class='delete-select-op themeColorsFont' bindtap='onClickDeleteOp' data-type='{{true}}'>确定</view>
+    </view>
+  </view>
+</view>

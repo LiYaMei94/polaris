@@ -1,0 +1,76 @@
+<!-- 六边形图片 -->
+<import  src='../template/hexagonImg/hexagonImg.wxml'/>
+<view class='ranking' wx:if='{{myMonthRank!="-"||myTotalRank!="-"}}'>
+  <view class='rank-header' wx:if='{{monthtop?topThreeMonthInfo.length!=0:topThreeInfo.length!=0}}'>
+    <view class='oneself-ranking'>
+      <text wx:if='{{myRank!="-"}}'>您的排名是第 <text class='themeColorsFont'>{{myRank}}</text> 名</text>
+      <text wx:else>再努力一点就上榜啦~</text>
+    </view>
+    <view class='topThreeInfo'>
+      <block wx:for='{{monthtop?topThreeMonthInfo:topThreeInfo}}' wx:key='index'>
+        <view class='topThree-item ' style='width:{{topThreeItemWidth}}px;left:{{index==0?topThreeItemWidth:index==1?0:(topThreeItemWidth*2+topThreeItemPaddingLeft)}}px;padding-left:{{topThreeItemPaddingLeft}}}px;'>
+          <view class='userHeadPortrait {{index!=0?"userHeadPortrait-side":""}}'>
+            
+            <template is='hexagonImg' data='{{...item,index}}' ></template>
+            <view class='topNum  {{index==0?"topOne":""}} ' style='background-color: {{index==0?"#FFCF00":index==1?"#63EE57":"#BC72FF"}};'>{{item.rank}}</view>
+          </view>
+          <view class='nickname themeColorsFont' data-content='{{item.nickname}}'  bindtouchstart='showTotal' >{{item.nickname}}</view>
+          <view class='level-container'>
+            <image wx:if='{{item.vip!=0}}' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/vip%5Cvip{{item.vip}}.png' ></image>
+            <image  wx:else style='width:90%;height:90%;' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/0.png'></image>
+          </view>
+          <view class='like-container'>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CheartIcon.png'></image>
+            <text>{{item.credit}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='rankingListBox' >
+    <view class='rankingListTab'>
+      <view bindtap='selectTopList' data-topType='月榜'>
+        <text class='{{monthtop?"actvieTab":""}}'>月榜</text>
+      </view>
+      <view bindtap='selectTopList' data-topType='总榜'>
+        <text class='{{monthtop?"":"actvieTab"}}'>总榜</text>
+      </view>
+    </view>
+    <swiper style='height:{{swiperHeights[swiperCurrentIndex]}}rpx' class='imgSwiper'  bindchange='swiperIndex' current='{{swiperCurrentIndex}}' wx:if='{{monthtop?rankingList[0].length!=0:rankingList[1].length!=0}}'>
+      <block wx:for='{{rankingList}}' wx:for-item='tab' wx:key='index'>
+        <swiper-item>
+          <block wx:for='{{tab}}' wx:key='index' >
+            <view class='rankingItem'>
+              <view class='rankingNum'>{{item.rank}}.</view>
+              <view class='headImg' data-uid='{{item.uid}}' bindtap='goPerson'>
+                <image class='headImg' src='{{item.avatar}}'></image>
+              </view>
+              <view class='rankingItemcenter' data-content='{{item.nickname}}' bindtab='showTotal'>
+                <view >{{item.nickname}}</view>
+                <view class='level-container ranking-level-container'>
+                  <text>星粉 v{{item.vip}}</text>
+                </view>
+              </view>
+              <view class='like-container ranking-like-container'>
+                <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/homeImg%5CheartIcon.png'></image>
+                <text>{{item.credit}}</text>
+              </view>
+            </view>
+            <!-- 没有排行榜时 -->
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+    <swiper wx:else class='listNull' style='height:200rpx;line-height:200rpx;'>
+      <swiper-item >
+        <view style='color:#999;'>暂无其他排行,去看看其他的吧！</view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<view wx:else class='rankNull'>
+  <view class='buttonBox'>
+    <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5ClogOut.png'></image>
+    <view>努力上榜，Pick你的C位！</view>
+  </view>
+</view>

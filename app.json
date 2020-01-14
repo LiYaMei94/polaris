@@ -1,0 +1,89 @@
+{
+  "pages": [
+    
+    
+    
+    "pages/mall/mall",
+    "pages/mall_product_detail/mall_product_detail",
+    "pages/mall_order_record/mall_order_record",
+    "pages/mall_submit_order/mall_submit_order",
+    "pages/mall_address_list/mall_address_list",
+    "pages/mall_address_edit/mall_address_edit",
+    "pages/mall_recharge/mall_recharge",
+    
+    "pages/StartPage/StartPage",
+    "pages/home/home",
+    "pages/trip/trip",
+    "pages/makeReinforce/makeReinforce",
+    "pages/ranking/ranking",
+    "pages/contentDetial/contentDetial",
+    "pages/polarisIntroduction/polarisIntroduction",
+    "pages/trip/tripDetail/tripDetail",
+    "pages/makeReinforce/reinforceTaskDetail/reinforceTaskDetail",
+    "pages/post/post",
+    "pages/postEdit/postEdit",
+    "pages/fanscircle/fanscircle",
+     "pages/mine/mine",
+    "pages/mine_home/mine_home",
+    "pages/mine_personal_info/mine_personal_info",
+    "pages/complete_personal_info/complete_personal_info",
+    "pages/activity_detail/activity_detail",
+    "pages/mine_activity/mine_activity",
+    "pages/mine_pic_crop/mine_pic_crop",
+    "pages/mine_collect/mine_collect",
+    "pages/mine_vip_rule/mine_vip_rule"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#222222",
+    "navigationBarTitleText": "北极星",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#333333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "北极星",
+        "iconPath": "images/tab/tab_home_simple.png",
+        "selectedIconPath": "images/tab/tab_home_select.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "投稿",
+        "iconPath": "images/tab/tab_post_simple.png",
+        "selectedIconPath": "images/tab/tab_post_select.png"
+      },
+      {
+        "pagePath": "pages/fanscircle/fanscircle",
+        "text": "粉丝墙",
+        "iconPath": "images/tab/tab_fans_simple.png",
+        "selectedIconPath": "images/tab/tab_fans_select.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城",
+        "iconPath": "images/tab/SC_weijihuo.png",
+        "selectedIconPath": "images/tab/SC_jihuo.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tab/tab_mine_simple.png",
+        "selectedIconPath": "images/tab/tab_mine_select.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.2.4",
+      "provider": "wxa75efa648b60994b"
+    }
+  }
+}

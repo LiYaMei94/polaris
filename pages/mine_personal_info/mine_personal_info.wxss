@@ -1,0 +1,261 @@
+/* pages/mine-personal-info/personal_info.wxss */
+
+/* 头像 */
+
+.container {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.portrait_block {
+  height: 178rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+  background-color: white;
+}
+
+.protrait {
+  width: 133rpx;
+  height: 133rpx;
+  border-radius: 50%;
+}
+
+.arrow_right {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 21rpx;
+}
+
+.simple_block {
+  height: 85rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-top: 2rpx;
+}
+
+.simple_block:nth-child(2) {
+  margin-top: 11rpx;
+}
+
+.simple_block:nth-child(5) {
+  margin-top: 11rpx;
+}
+
+.simple_block text:nth-child(1) {
+  flex: 1;
+  padding-right: 30rpx;
+  min-width: 120rpx;
+}
+
+.simple_block text:nth-child(2) {
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.confirm {
+  width: 693rpx;
+  height: 91rpx;
+  font-size: 30rpx;
+  color: white;
+  border-radius: 10rpx;
+  margin-top: 290rpx;
+  text-align: center;
+  line-height: 91rpx;
+}
+
+/* 弹窗 */
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.dialog_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.dialog_container {
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 昵称弹框 */
+
+.dialog_nickname {
+  width: 450rpx;
+  margin-top: -150rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding: 40rpx 44rpx 30rpx 44rpx;
+}
+
+.dn_desc {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.dn_content {
+  font-size: 30rpx;
+  margin-top: 70rpx;
+  padding-bottom: 7rpx;
+  margin-bottom: 19rpx;
+}
+
+.dn_tips {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.dn_confirm {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  background-color: transparent;
+  align-self: flex-end;
+  line-height: 50rpx;
+  margin-top: 60rpx;
+  text-align: right;
+  float: right;
+}
+
+.dn_confirm::after {
+  border: none;
+}
+
+/* 性别弹框 */
+
+.dialog_sex {
+  width: 450rpx;
+  height: 250rpx;
+  margin-top: -200rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding: 40rpx 44rpx 15rpx 44rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.sex_item {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #333;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sex_desc {
+  margin-bottom: 15rpx;
+}
+
+.sex_item text {
+  flex: 1;
+  text-align: center;
+}
+
+.sex_item image {
+  width: 30rpx;
+  height: 21rpx;
+  position: absolute;
+  right: 30rpx;
+}
+
+/* 省市区弹窗 */
+
+.dialog_address {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* 出生日期弹窗 */
+
+.dialog_birth {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* 个性签名 */
+
+.dialog_signature {
+  width: 450rpx;
+  margin-top: -150rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding: 40rpx 44rpx 30rpx 44rpx;
+}
+
+.ds_desc {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.ds_content {
+  width: 100%;
+  font-size: 30rpx;
+  margin-top: 70rpx;
+  padding-bottom: 7rpx;
+  margin-bottom: 19rpx;
+
+  min-height: 40rpx;
+  max-height: 80rpx;
+}
+
+.ds_tips {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.ds_confirm {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  background-color: transparent;
+  align-self: flex-end;
+  line-height: 50rpx;
+  margin-top: 60rpx;
+  text-align: right;
+  float: right;
+}
+
+.ds_confirm::after {
+  border: none;
+}

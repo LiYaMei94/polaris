@@ -1,0 +1,15 @@
+<template name='success-dialog-wrap' >
+  <view class='coin-lock-wrap' wx:if='{{is_exchange_success}}' catchtap='hiddendialog'>
+    <view class='coin-lock-content success-dialog-content'>
+      <view class='success-dialog_title themeColorsBG'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/11_03.png'></image>
+        <text>兑换成功</text>
+      </view>
+      <view class='remaining_coin'>
+        <text>剩余虚拟币：</text>
+        <text>0</text>
+      </view>
+      <view class='recharge themeColorsBG success_confirm' catchtap='hiddendialog'>确定</view>
+    </view>
+  </view>
+</template>

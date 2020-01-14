@@ -1,0 +1,86 @@
+<!--pages/mine_home/mine_home.wxml-->
+<import src='../template/dialog-classify/dialog-classify.wxml' />
+<import src='../template/dialog-calendar/dialog-calendar.wxml' />
+
+<view class='container'>
+  <image class='back'></image>
+  <scroll-view>
+    <!-- 个人信息 -->
+    <view class='person' catchlongpress='reportComment'>
+      <view class='info'>
+        <view class='info_left' catchtap='previewAvatar'>
+          <view class='l_portrait_block'>
+            <image class='l_portrait' src='{{userInfo.avatar}}'></image>
+            <!-- <image class="l_level" src='{{current_level}}'></image> -->
+          </view>
+          <view class='vip' wx:if="{{userInfo.vip>0}}" bindtap='navigate' data-url='mine_vip_rule' data-type='{{0}}'>
+            <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/vip%5Cvip{{userInfo.vip}}.png'></image>
+            <!-- <view class='level_info'>
+                <text>VIP</text>
+                <text class='level'>{{userInfo.vip}}</text>
+              </view> -->
+          </view>
+        </view>
+        <view class='info_right'>
+          <view class='r_name_block'>
+            <text class='name' style='max-width: {{nameMaxWidth}}px' catchtouchstart='toast' data-content='{{userInfo.nickname}}'>{{userInfo.nickname}}</text>
+            <image class='sex' src='{{userInfo.gender===1?"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_male.png":"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_female.png"}}'></image>
+            <view style='flex:1'></view>
+            <text class='edit' wx:if="{{isMyself}}" bindtap='navigate' data-url='mine_personal_info'>编辑</text>
+          </view>
+          <view class='r_addr_age'>
+            <text>{{userInfo.age===""||userInfo.age===undefined?"未知":userInfo.age+"岁"}}</text>
+            <text style='margin-left:40rpx;'>{{userInfo.address[1]}}</text>
+          </view>
+          <text>{{isMyself?userInfo.signature||"介绍下自己，别人会更了解你~":userInfo.signature||whose+"太懒了什么也没有留下~"}}</text>
+        </view>
+      </view>
+      <view class='line'></view>
+      <view class='op'>
+        <view class="op_item" bindtap='navigate' data-url='home' wx:if="{{!isSign}}">
+          <text>签　　到</text>
+          <text style='margin-left:49rpx;flex:1;color:#2DA9FF;'>去签到</text>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+        </view>
+        <view class="op_item" bindtap='navigate' data-url='calendar'>
+          <text>{{isMyself?'点击补签':'签到天数'}}</text>
+          <text style='margin-left:49rpx;color:#333333'>连续签到：</text>
+          <text style='color:#2DA9FF'>{{userInfo.days}}</text>
+          <text style='color:#333333;margin-left:10rpx;'>天</text>
+          <text style='color:#333333;margin-left:30rpx;'>总签到：</text>
+          <text style='color:#2DA9FF'>{{userInfo.all_days}}</text>
+          <text style='color:#333333;margin-left:10rpx;flex:1;'>天</text>
+          <image wx:if="{{isMyself}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+        </view>
+        <view class="op_item" bindtap='navigate' data-url='mine_vip_rule' data-type='{{1}}'>
+          <text>{{whose}}的积分</text>
+          <text style='margin-left:49rpx;color:#2DA9FF'>{{userInfo.credit}}</text>
+          <text style='color:#333333;margin-left:10rpx;flex:1;'>分</text>
+          <image  src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Carrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 我的发布 -->
+    <view class='post'>
+      <view class='post_title'>
+        <text class='post_desc'>最近发布</text>
+        <text style='flex:1'>{{"("+count+")"}}</text>
+        <view class='more' bindtap='open_classify' data-content='{{true}}'>
+          <text>{{dialog_classify_data.index===0?"按时间":"按热度"}}</text>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cmore.png'></image>
+        </view>
+        <template is='dialog-classify' data="{{dialog_classify_data}}" />
+      </view>
+      <view class='personalDynamicList'>
+        <block wx:for="{{polarisItemInfo}}" wx:key="index">
+          <polaris-item-wrap polarisItem='{{item}}' source="mine_home" bind:openOp="openOp"></polaris-item-wrap>
+        </block>
+        <import src="../template/load-more/load-more.wxml" />
+        <template is="loading" data="{{loadComplete,count:polarisItemInfo.length, text:'只有这些啦~',emptyText:isMyself?'快来点亮你的星光吧':'星星忙着打怪，暂时没有内容哦。'}}" />
+      </view>
+    </view>
+  </scroll-view>
+  <dialog-op polarisItem="{{currentOpItem}}" wx:if="{{showOp}}" source="mine_home" bind:openOp="openOp" />
+  <template is="dialog-calendar" wx:if="{{showSignDialog}}" data="{{signCalendar}}" />
+</view>
+<image class='toTop' wx:if="{{showToTop}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/to_top.png' bindtap='toTop'></image>

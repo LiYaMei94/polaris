@@ -1,0 +1,15 @@
+.addAddress{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 100rpx;
+}
+.addAddressBtn{
+  width: 100%;
+  text-align: center;
+  line-height:100rpx;
+  color: white;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+}

@@ -1,0 +1,12 @@
+<view class='wechat-slideview'>
+	<view class='slide_view_item' style="{{txtStyle}};" bindtouchend="onTouchEnd" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" >
+		<view direction="horizontal"   class="movable-view"    >
+			<view class="left">
+				<slot name="left"></slot>
+			</view>
+			<view class="right">
+				<slot name="right"></slot>
+			</view>
+		</view>
+	</view>
+</view>

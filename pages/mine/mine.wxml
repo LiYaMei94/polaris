@@ -1,0 +1,110 @@
+<!--pages/mine/mine.wxml-->
+<import src='../template/dialog-classify/dialog-classify.wxml' />
+<!-- 未登录 -->
+<view class='loginPage' wx:if="{{userInfo==null||userInfo==undefined}}">
+  <view class='buttonBox'>
+    <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5ClogOut.png'></image>
+    <view>您还没有登录，需要登录授权</view>
+  </view>
+  <button class='themeColorsBG loginBtn' open-type='getUserInfo' hover-class='none' bindgetuserinfo='login'>立即登录</button>
+</view>
+<!-- 登录 -->
+<view class='container' wx:else>
+  <image class='back'></image>
+  <scroll-view style="height:100%" scroll-y="{{false}}">
+    <!-- 个人信息 -->
+    <!-- <button wx:if="{{userInfo==null||userInfo==undefined}}" class='login' open-type='getUserInfo' bindgetuserinfo='login'>未登录</button> -->
+    <navigator url="../mine_home/mine_home?uid={{userInfo.openid}}" style='width:100%' hover-class='none'>
+      <view class='info'>
+        <view class='info_person'>
+          <!-- 头像 -->
+          <view class='info_portrait_block'>
+            <image class='info_portrait' src='{{userInfo.avatar}}'></image>
+          </view>
+          <!-- 昵称及个性签名 -->
+          <view class='info_name_block'>
+            <view class='info_name'>
+              <text class='name' style='max-width: {{nameMaxWidth}}px'>{{userInfo.nickname}}</text>
+              <view class='sex' style='height: {{sexHeight}}px'>
+              <image  wx:if="{{userInfo.gender}}" src='{{userInfo.gender===1?"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_male.png":"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_female.png"}}' mode='widthFix'></image>
+              </view>
+              <view class='vip' wx:if="{{userInfo.vip>0}}">
+                <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/vip%5Cvip{{userInfo.vip}}.png'></image>
+                <!-- <view class='level_info'>
+                  <text>VIP</text>
+                  <text class='level'>{{userInfo.vip}}</text>
+                </view> -->
+              </view>
+            </view>
+            <text>{{userInfo.signature===""?"介绍下自己，别人会更了解你~":userInfo.signature}}</text>
+          </view>
+        </view>
+        <view class='line_horizontal' style='width:633rpx'></view>
+        <view class='info_jv'>
+          我的积分：
+          <text>{{userInfo.credit}}</text>
+          <view style='flex:1'></view>VIP等级：
+          <text>{{"星粉V"+userInfo.vip}}</text>
+        </view>
+      </view>
+    </navigator>
+    <!-- 功能块 -->
+    <view class='op'>
+      <navigator url='../mine_vip_rule/mine_vip_rule' hover-class="none">
+        <!-- <view class='op_item' catchtap='toastClose'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cmine_at.png'></image>
+          <text>@我的</text>
+        </view> -->
+        <view class='op_item'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5CVIP_icon.png'></image>
+          <text>VIP规则</text>
+        </view>
+      </navigator>
+      <navigator url='../mine_activity/mine_activity' hover-class="none">
+        <view class='op_item'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cmine_act.png'></image>
+          <text>消息通知</text>
+        </view>
+      </navigator>
+      <navigator url='../mine_collect/mine_collect' hover-class="none">
+        <view class='op_item'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cmine_circle.png'></image>
+          <text>我的收藏</text>
+        </view>
+      </navigator>
+      <navigator url='../mall_order_record/mall_order_record' hover-class="none">
+        <view class='op_item'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/WD_dingdan.png'></image>
+          <text>我的订单</text>
+        </view>
+      </navigator>
+      <navigator url='../mall_recharge/mall_recharge' hover-class="none">
+        <view class='op_item'>
+          <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/DH_xunibi.png'></image>
+          <text>兑换虚拟币</text>
+        </view>
+      </navigator>
+    </view>
+    <!-- 我的发布 -->
+    <view class='post'>
+      <view class='post_title'>
+        <text class='post_desc'>我的发布</text>
+        <text style='flex:1'>{{"("+count+")"}}</text>
+        <view class='more' bindtap='open_classify' data-content='{{true}}'>
+          <text>{{dialog_classify_data.index===0?"按时间":"按热度"}}</text>
+          <image class='more_image' src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Cmore.png'></image>
+        </view>
+        <template is='dialog-classify' data="{{dialog_classify_data}}" />
+      </view>
+      <view class='personalDynamicList'>
+        <block wx:for='{{polarisItemInfo}}' wx:for-item='polarisItem' wx:key='index'>
+          <polaris-item-wrap polarisItem='{{polarisItem}}' source="mine" bind:updateList='updateList' bind:openOp="openOp"></polaris-item-wrap>
+        </block>
+        <import src="../template/load-more/load-more.wxml" />
+        <template  wx:if="{{userInfo!=null&&userInfo!=undefined}}" is="loading" data="{{loadComplete,count:polarisItemInfo.length, text:'只有这些啦~',emptyText:'快来点亮你的星光吧'}}" />
+      </view>
+    </view>
+  </scroll-view>
+  <dialog-op polarisItem="{{currentOpItem}}" source="mine" wx:if="{{showOp}}" bind:openOp="openOp" />
+</view>
+<image class='toTop' wx:if="{{showToTop}}" src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/to_top.png' bindtap='toTop'></image>

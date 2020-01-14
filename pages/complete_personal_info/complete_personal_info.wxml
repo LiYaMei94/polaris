@@ -1,0 +1,36 @@
+<!--pages/complete_personal_info/complete_personal_info.wxml-->
+<view class='container'>
+    <image class="portrait"
+           src='{{userInfo.avatar===""?"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Ccamera.png":userInfo.avatar}}'
+           bindtap='choosePortrait'></image>
+    <form bindsubmit='complete'>
+        <!-- 昵称 -->
+        <input class='nickname' name="nickname" value="{{userInfo.nickname}}" placeholder='请输入昵称'
+               placeholder-style='color:#999999' maxlength="10" focus="{{true}}" cursor-spacing='20'
+               bindinput="bindinput"></input>
+        <!-- 性别 -->
+        <text class='sex_desc themeColorsFont'>性别</text>
+        <view class='sex_block'>
+            <view class='sex_male' style='background-color:{{userInfo.gender===1?"#57d78c":"#fff"}}' bindtap='selectSex'
+                  data-content='{{1}}'>
+                <image src='{{userInfo.gender===1?"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_male_white.png":"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_male.png"}}'></image>
+                <text style='color:{{userInfo.gender===1?"#fff":"#2DA9FF"}}'>男</text>
+            </view>
+            <view class='sex_female' style='background-color:{{userInfo.gender===2?"#57d78c":"#fff"}}'
+                  bindtap='selectSex' data-content='{{2}}'>
+                <image src='{{userInfo.gender===2?"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_female_white.png":"https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/mine%5Csex_female.png"}}'></image>
+                <text style='color:{{userInfo.gender===2?"#fff":"#FF7070"}}'>女</text>
+            </view>
+        </view>
+        <!-- 出生日期 -->
+        <text class='birth_desc themeColorsFont'>出生日期</text>
+
+        <picker mode="date"
+                value="{{userInfo.birth===''||userInfo.birth==null||userInfo.birth===0?currentDate:userInfo.birth}}"
+                start="1900-01-01" end="{{currentDate}}" bindchange="bindDateChange">
+            <text class='birth'>{{userInfo.birth===''||userInfo.birth==null||userInfo.birth===0?"请选择":userInfo.birth}}
+            </text>
+        </picker>
+        <button class='complete themeColorsBG' form-type='submit'>完成</button>
+    </form>
+</view>

@@ -1,0 +1,43 @@
+<view class='post themeColorsBG'>
+  <view class='post-wrap'>
+    <view class='post-wrap-left'> 
+      <view class='year'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/post%5CyearBG.png'></image>
+        <text>{{currentYear}}</text>
+      </view>
+      <view class='post-wrap-left-text'>
+        <view>北极星粉丝后援会</view>
+        <view>快来投稿吧!</view>
+      </view>
+    </view>
+    <view class='post-wrap-right'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/post%5CpolarisHeadImg.png'></image>
+    </view>
+  </view>
+  <!-- 1:图文 2:视频 3:文字 -->
+  <view class='post-wrap2' >
+    <view bindtap='islogin' data-editType='{{1}}' class='post-wrap-item'>
+      <view class='post-wrap-item-img'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/post%5CtextIcon.png'></image>
+      </view>
+      <view class='post-wrap-item-text'>图片</view>
+    </view>
+    <view bindtap='islogin'  data-editType='{{2}}' class='post-wrap-item'>
+      <view class='post-wrap-item-img'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/post%5CvideoIcon.png'></image>
+      </view>
+      <view class='post-wrap-item-text'>视频</view>
+    </view>
+    <view bindtap='islogin' data-editType='{{3}}' class='post-wrap-item'>
+      <view class='post-wrap-item-img'>
+        <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/static/images/post%5CtextImgIcon.png'></image>
+      </view>
+      <view class='post-wrap-item-text'>文字</view>
+    </view>
+  </view>
+  <view class='prompt'>
+    <view>注意:</view>
+    <view>超过5M的图片、视频请发送至官方邮箱上传</view>
+    <view catchlongpress='copyEmail' data-email='lixiaoran@chr-media.com'>lixiaoran@chr-media.com</view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+.product-item{
+  width: 48%;
+  float: left;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.product_img{
+  width: 100%;
+  height: 380rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  background-color: #dfdfdf;
+  overflow: hidden;
+}
+.product_img image{
+  width: 100%;
+  height: 100%;
+}
+.product_info_wrap{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx ;
+  font-size: 30rpx;
+}
+.product_name{
+  text-overflow: ellipsis; 
+  overflow : hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.product_coin{
+  width: 100%;
+  overflow: hidden;
+  height: 55rpx;
+  line-height: 55rpx;
+}
+.product_coin_num{
+  color:#ff0000;
+  float: left;
+}
+.product_coin_unit{
+  color: #999999;
+  float: right;
+}

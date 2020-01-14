@@ -1,0 +1,70 @@
+/* pages/fanscircle/fanscircle.wxss */
+@import '../template/swiperTemplate/swiperTemplate.wxss';
+/* 轮播图 */
+.container{
+  
+}
+
+.banner {
+  width: 100%;
+  padding: 28rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+/* 粉丝墙 */
+
+.fans {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.fans_head {
+  height: 80rpx;
+  display: flex;
+  line-height: 1;
+  align-items: center;
+  background-color: white;
+
+  padding-left: 28rpx;
+  box-sizing: border-box;
+  /* margin-bottom: 1rpx; */
+}
+
+.item {
+  text-align: center;
+  width: 100rpx;
+  font-weight: bold;
+}
+
+.simple_head {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.select_head {
+  font-size: 30rpx;
+  color: #333;
+  padding-bottom: 10rpx;
+  /* box-sizing: border-box; */
+  border-bottom: 5rpx solid #57d78c;
+}
+
+.addfansgroup {
+  font-size: 26rpx;
+  color: #2da9ff;
+  padding: 0 29rpx;
+}
+.fans_content{
+  /* height: 500rpx; */
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.polaris-list{
+  display: flex;
+  flex-direction: column;
+}

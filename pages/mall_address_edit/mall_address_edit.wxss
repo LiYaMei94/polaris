@@ -1,0 +1,48 @@
+page{
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.mall_address_edit{
+  height: 100%;
+  background-color: white;
+}
+.input_wrap{
+  width: 100%;
+  display: flex;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #efefef;
+  position: relative;
+}
+.input_wrap>text{
+  flex: 2;
+}
+.input_wrap>input{
+  flex: 4;
+}
+.input_wrap>textarea{
+  flex: 4;
+  height: 200rpx;
+}
+.input_wrap>image{
+  width: 28rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  margin-top: -14rpx;
+
+}
+/* 保存按钮 */
+.save_button{
+  width: 690rpx;
+	height: 100rpx;
+	border-radius: 10rpx;
+  text-align: center;
+  color: white;
+  line-height: 100rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -345rpx;
+  bottom: 120rpx;
+}

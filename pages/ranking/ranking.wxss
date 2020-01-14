@@ -1,0 +1,264 @@
+@import '../template/hexagonImg/hexagonImg.wxss';
+page {
+  /* background-color: white; */
+}
+
+.ranking {
+  /* padding: 0 30rpx; */
+}
+.totalShow{
+  padding: 15rpx;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 30rpx;
+  position: absolute;
+  border-radius: 10rpx;
+  right: 0rpx;
+  top:-60rpx; 
+  white-space :nowrap ;
+}
+/* 头部 */
+
+.rank-header {
+  width: 100%;
+  background-color: #324d56;
+  color: white;
+  height: 635rpx;
+}
+
+/* 自己的排名 */
+
+.oneself-ranking {
+  width: 100%;
+  text-align: center;
+  padding: 30rpx 0 25rpx;
+}
+
+/* .oneself-ranking image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 20rpx;
+} */
+
+/* 前三名列表 */
+
+.topThreeInfo {
+  width: 100%;
+  position: relative;
+  height: 525rpx;
+  box-sizing: border-box;
+  
+}
+
+.topThree-item {
+  text-align: center;
+  position: absolute;
+}
+.userHeadPortrait {
+  position: relative;
+  margin-bottom: 50rpx;
+  height: 260rpx;
+  width: 100%;
+  /* border-radius: 50%;
+  background-color: #57d78c; */
+}
+
+.userHeadIcon {
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.topNum {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -22.5rpx;
+  bottom: -20rpx;
+  color: #333;
+}
+
+.topOne {
+  width: 65rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  margin-left: -32.5rpx;
+  bottom: -20rpx;
+}
+
+.nickname {
+  margin-bottom: 15rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.level-container {
+  position: relative;
+  /* width: 104rpx;
+  height: 30rpx; */
+  width: 60px;
+  height: 47px;
+  margin: 0 auto;
+}
+
+.level-container>image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.levelInfo {
+  top: 50%;
+  width: 100%;
+  left: 0rpx;
+  margin-top: -10rpx;
+}
+
+.like-container {
+  margin-bottom: 50rpx;
+}
+
+.like-container>image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.like-container>text {
+  height: 30rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  font-weight: 900rpx;
+}
+
+/* 排名 */
+
+.rankingListTab {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+}
+
+.rankingListTab>view {
+  flex: 1;
+  text-align: center;
+}
+
+.rankingListTab>view>text {
+  display: inline-block;
+  height: 75rpx;
+  line-height: 75rpx;
+  width: 100rpx;
+}
+
+.actvieTab {
+  border-bottom: 5rpx solid #57d78c;
+}
+.listNull{
+  width: 100%;
+  text-align: center;
+  
+}
+/* 排名列表 */
+
+.rankingItem {
+  height: 100rpx;
+  padding-left: 60rpx;
+  margin-top: 50rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.rankingItem>view{
+  text-align: left;
+  float: left;
+}
+.rankingNum {
+  height: 100%;
+  line-height: 100rpx;
+  width: 13%;
+  text-align: center!important;
+}
+
+.headImg {
+  width: 20%;
+}
+
+.headImg image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.rankingItemcenter {
+  width: 32%;
+  /* margin-top: 10rpx; */
+  position: relative;
+}
+.rankingItemcenter>view:nth-child(1){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ranking-level-container {
+  margin: 10rpx 0 0 0;
+}
+
+.ranking-levelInfo {
+  width: 104rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  z-index: 333;
+  position: absolute;
+  font-size: 20rpx;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.ranking-like-container {
+  width: 35%;
+  height: 100%;
+  line-height: 100rpx;
+  padding-left:10rpx;
+}
+.ranking-like-container>image{
+  margin-right: 25rpx;
+}
+/* 没有数据是展示 */
+
+.rankNull{
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 40% 0 0;
+  box-sizing: border-box;
+}
+.buttonBox{
+  width: 100%;
+  color: #999;
+}
+.buttonBox image{
+  width: 260rpx;
+  height: 260rpx;
+  margin-bottom: 50rpx;
+}
+.imgSwiper{
+  padding-bottom: 100rpx;
+}

@@ -1,0 +1,27 @@
+.count-wrap{
+  display: flex;
+  width: 170rpx;
+  text-align: center;
+  border-radius: 5rpx;
+	border: solid 1rpx #dfdfdf;
+  height: 50rpx;
+  background-color: white;
+}
+.minus,.add{
+  flex: 1;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  color: #999;
+}
+.count{
+  border-left: solid 1rpx #dfdfdf;
+  border-right: solid 1rpx #dfdfdf;
+  line-height: 50rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.minu_disable{
+  background-color:#eff3f6;
+}

@@ -1,0 +1,16 @@
+<template name='swiperTemplate'>
+  <swiper class='imgSwiper' circular='{{swiperInfo.circular}}' indicator-color='{{swiperInfo.indicatorColor}}' indicator-active-color='{{swiperInfo.indicatorActiveColor}}' indicator-dots="{{swiperInfo.swiperimgUrls.length>1?swiperInfo.indicatorDots:false}}"
+    autoplay="{{swiperInfo.autoplay}}" interval="{{swiperInfo.interval}}" duration="{{swiperInfo.duration}}">
+    <block wx:for="{{swiperInfo.swiperimgUrls}}" wx:key='index'>
+      <navigator url='{{item.navigateurl}}' hover-class='none'>
+        <swiper-item  >
+          <image src="{{item.image}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+  <!-- <view class='bannerText'>
+    <view class='themeColorsFont'>艾玛·杜蒙特</view>
+    <view>mma Dumont</view>
+  </view> -->
+</template>

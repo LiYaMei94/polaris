@@ -1,0 +1,133 @@
+@import '../template/swiperTemplate/swiperTemplate.wxss';
+/* 轮播图 */
+.tripBaner{
+  width: 100%;
+  position: relative;
+  background-color: white;
+  padding: 30rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+}
+.bannerText{
+  top: 75rpx;
+  left: 75rpx;
+}
+/* tabs样式 */
+
+.scroll_box{
+  width: 100%;
+  overflow: hidden;
+  padding-left: 30rpx;
+  background: #fff;
+  white-space: nowrap;
+  padding-top: 25rpx;
+}
+
+.tab-item{
+  display: inline-block;
+  margin-right: 45rpx;
+  padding-bottom: 25rpx;
+  font-size: 28rpx;
+  color: #666;
+  width: 108rpx;
+}
+
+/* 没有行程 */
+.tripNull{
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+  margin: 27% auto 0;
+}
+.tripNull image{
+  width: 200rpx;
+  height: 200rpx;
+}
+/* tab内容 */
+.tab-content{
+  margin: 20rpx 30rpx;
+  background-color: white;
+  padding: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tab-content-item{
+  background-color: #EEEEEE;
+  margin-bottom: 30rpx;
+  border-radius: 15rpx;
+  padding: 15rpx 15rpx 30rpx 15rpx;
+  box-sizing: border-box;
+  margin-left: 39rpx;
+  position: relative;
+  width: 94%
+}
+.tab-content-item:nth-child(1) .tab-content-bar .tab-bar{
+  height: 120rpx;
+}
+.tab-content-bar{
+  position: absolute;
+  left: -30rpx;
+  top: -93rpx;
+}
+.tab-content-item:nth-child(1) .tab-content-bar {
+  top: 22rpx;
+}
+.tab-bar{
+  position: absolute;
+  background-color: #DBDBDB;
+  width: 1rpx;
+  height:240rpx;
+}
+.tab-dot{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: -3rpx;
+  top: 115rpx;
+}
+.tab-content-item:nth-child(1) .tab-content-bar .tab-bar .tab-dot{
+  top: 0rpx;
+}
+/*向左三角形*/
+.triangle_border_left{
+  display:block;
+  width:0;
+  height:0;
+  border-width:16rpx 20rpx 16rpx 0;
+  border-style:solid;
+  border-color:transparent #EEEEEE transparent transparent;/*透明 黄 透明 透明 */
+  position:absolute;
+  top:12rpx;
+  left:-13rpx;
+}
+.tripTitle{
+  border-bottom: 1rpx solid #DBDBDB;
+  padding-bottom: 15rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.tripContent{
+  margin-top: 10rpx;
+}
+.tripContent:nth-child(3){
+  margin-top: 7rpx;
+}
+.tab-content-item image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.tab-content-item text{
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+/* 滑动切换 */
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}

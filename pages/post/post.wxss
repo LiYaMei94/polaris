@@ -1,0 +1,95 @@
+.post{
+  height: 100%;
+  color: white;
+  padding: 30% 0 ;
+  box-sizing: border-box;
+}
+.post-wrap{
+  display: flex;
+  width: 100%;
+  margin-bottom: 20%;
+  padding: 0 13%;
+  box-sizing: border-box;
+}
+.post-wrap-left{
+  flex: 1;
+  margin-top: 15rpx;
+}
+.year{
+  width: 128rpx;
+  height: 50rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.year>image{
+  width: 128rpx;
+  height: 50rpx;
+}
+.year>text{
+  position: absolute;
+  left: 0;
+  height: 100%rpx;
+  line-height: 50rpx;
+  width: 100%;
+  top: 0rpx;
+  text-align: center;
+}
+
+.post-wrap-left-text>view:nth-child(2){
+  font-size: 30rpx;
+}
+.post-wrap-left-text>view:nth-child(2){
+  font-weight: 900;
+  font-size: 50rpx;
+}
+.post-wrap-right{
+  flex: 1;
+  text-align: right;
+}
+.post-wrap-right image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 12rpx;
+}
+.post-wrap2{
+  width: 100%;
+  display: flex;
+  padding:0 6%;
+  box-sizing: border-box;
+}
+.post-wrap-item{
+  flex: 1;
+  text-align: center;
+}
+.post-wrap-item-img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20rpx;
+}
+.post-wrap-item-img image{
+  width: 65rpx;
+  height: 60rpx;
+}
+.post-wrap-item-text{
+  font-size: 30rpx;
+}
+/* 提示 */
+.prompt{
+  position: fixed;
+  bottom: 10%;
+  padding:0 0 0 13%;
+  box-sizing: border-box;
+}
+.prompt view{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.prompt view:nth-child(3){
+  color:#2DA9FF;
+}

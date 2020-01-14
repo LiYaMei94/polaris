@@ -1,0 +1,10 @@
+<!--pages/activity_detail/activity_detail.wxml-->
+<view class='container'>
+  <view class='top' wx:if="{{activity.image!==''}}">
+    <image src='{{activity.image}}'></image>
+  </view>
+  <view class='body'>
+    <text class="title">{{activity.title}}</text>
+    <rich-text class='content' nodes="{{activity.content}}"></rich-text>
+  </view>
+</view>

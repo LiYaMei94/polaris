@@ -1,0 +1,42 @@
+/* pages/mine_activity/mine_activity.wxss */
+.container{
+  padding: 29rpx 29rpx 0 29rpx;
+  box-sizing: border-box;
+}
+.item{
+  background-color: white;
+  width: 100%;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 28rpx;
+}
+
+.line1{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.title{
+  flex: 1;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.new{
+  background-color: #00C192;
+  border-radius: 50%;
+  width: 13rpx;
+  height: 13rpx;
+  display: block;
+  margin-right: 19rpx;
+}
+
+.content{
+  color: #999999;
+  font-size: 26rpx;
+  display: block;
+  margin-top: 20rpx;
+}

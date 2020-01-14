@@ -1,0 +1,39 @@
+<view class='order_record'>
+  <view class='' wx:if='{{order_record.length!=0}}'>
+    <block wx:for='{{order_record}}' wx:key='index' >
+      <order-record-item btnCount='{{1}}'>
+        <view slot="left" class="left" style='height:260rpx;width:{{_windowWidth}}px'>
+          <view class='product_img'>
+            <image src='{{item.cover}}'></image>
+          </view>
+          <view class='product_info'>
+            <view class='product_line'>
+              <text class='product_name'>{{item.g_name}}</text>
+              <text class='record_time'>{{item.create_time}}</text>
+            </view>
+            <view class='product_line'>
+              <text class='product_describe'>{{item.g_desc}}</text>
+            </view>
+            <view class='product_line'>
+              <view class='money_info'>
+                <text class='product_money'>{{item.expend}}</text>
+                <text class='product_money_unit'> {{item.way==1?"积分":"虚拟币"}}</text>
+              </view>
+              <text  class='product_count'>数量{{item.count}}</text>
+            </view>
+          </view>
+        </view>
+        <view slot="right" class="right" style='height:260rpx;line-height:260rpx;'>
+          <view class='delete themeColorsBG' bindtap='delete_record' data-record_id='{{item.id}}'>删除</view>
+        </view>
+      </order-record-item>
+    </block>
+  </view>
+  <!-- 暂无记录 -->
+  <view class='no_record' style='height:{{_windowHeight}}px' wx:else>
+    <view class='no_record_content'>
+      <image src='https://polaris-1257165361.cos.ap-guangzhou.myqcloud.com/images/TU_tu.png'></image>
+      <view>暂时没有订单~</view>
+    </view>
+  </view>
+</view>

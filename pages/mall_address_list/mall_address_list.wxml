@@ -1,0 +1,8 @@
+<view class='mall_address'>
+  <!-- 列表组件 -->
+  <address-item  address='{{address}}'/>
+  <!-- 新增按钮 -->
+  <navigator class='addAddress ' hover-class='none' url='../mall_address_edit/mall_address_edit'>
+    <view class='addAddressBtn themeColorsBG'>+ 新增收货地址</view>
+  </navigator >
+</view>

@@ -1,0 +1,5 @@
+<view class='count-wrap'>
+  <view class='minus {{is_minu_disable?"":"minu_disable"}}' catchtap='countMinus'>-</view>
+  <view class='count' style='flex:{{count<100?"3":""}}'>{{count}}</view>
+  <view class='add' catchtap='countAdd'>+</view>
+</view>
